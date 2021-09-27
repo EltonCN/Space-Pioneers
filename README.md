@@ -10,6 +10,8 @@ Um jogo de exploração espacial para a discplina Introdução ao Desenvolviment
 
 Neste jogo, o jogador deve manipular o cenário de cada fase do jogo, colocando astros celestes e utilizar habilidades para ajudar a tripulação de uma nave espacial a encontrar um planeta habitável. Um jogo de puzzle e estratégia; com uma boa narrativa e mistérios.
 
+![One-sheet](Docs/One%20sheet.png)
+
 ## Our team
 
 Elton Cardoso do Nascimento - IC Unicamp
