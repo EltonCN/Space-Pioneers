@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 53679540}
   - component: {fileID: 53679543}
   - component: {fileID: 53679542}
-  - component: {fileID: 53679541}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -156,19 +155,6 @@ Transform:
   m_Father: {fileID: 1158051422}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &53679541
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53679539}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &53679542
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -229,7 +215,6 @@ GameObject:
   - component: {fileID: 1037532907}
   - component: {fileID: 1037532910}
   - component: {fileID: 1037532909}
-  - component: {fileID: 1037532908}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -251,19 +236,6 @@ Transform:
   m_Father: {fileID: 2021436678}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1037532908
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1037532906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1037532909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -326,6 +298,7 @@ GameObject:
   - component: {fileID: 1158051420}
   - component: {fileID: 1158051424}
   - component: {fileID: 1158051423}
+  - component: {fileID: 1158051425}
   m_Layer: 0
   m_Name: Planeta (2)
   m_TagString: Untagged
@@ -488,6 +461,19 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!135 &1158051425
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158051419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1316467064
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +485,6 @@ GameObject:
   - component: {fileID: 1316467065}
   - component: {fileID: 1316467068}
   - component: {fileID: 1316467067}
-  - component: {fileID: 1316467066}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -521,19 +506,6 @@ Transform:
   m_Father: {fileID: 1416178494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1316467066
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316467064}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1316467067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -594,6 +566,7 @@ GameObject:
   - component: {fileID: 1416178494}
   - component: {fileID: 1416178493}
   - component: {fileID: 1416178492}
+  - component: {fileID: 1416178495}
   m_Layer: 0
   m_Name: Planeta
   m_TagString: Untagged
@@ -647,6 +620,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1416178495
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416178491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1442749381
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +917,7 @@ GameObject:
   - component: {fileID: 2021436678}
   - component: {fileID: 2021436677}
   - component: {fileID: 2021436676}
+  - component: {fileID: 2021436679}
   m_Layer: 0
   m_Name: Planeta (1)
   m_TagString: Untagged
@@ -984,3 +971,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2021436679
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021436675}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
