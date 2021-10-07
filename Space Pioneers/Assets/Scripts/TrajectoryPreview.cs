@@ -48,15 +48,16 @@ public class TrajectoryPreview : MonoBehaviour
     void simular()
     {
         
-        if(first)
-        {
+        /*if(first)
+        {*/
             twin = Instantiate(this.gameObject);
             twin.transform.position = this.transform.position;
             twin.transform.rotation = this.transform.rotation;
 
             twin.GetComponent<Renderer>().enabled = false;
             twin.GetComponent<TrajectoryPreview>().enabled = false;
-            
+
+            twin.GetComponent<Gravity>().v0 = this.GetComponent<Rigidbody>().velocity;
 
             SceneManager.MoveGameObjectToScene(twin, simulationScene);
 
@@ -72,39 +73,55 @@ public class TrajectoryPreview : MonoBehaviour
                 {
                     GameObject go = c.gameObject;
                     
+                    Gravity g = go.GetComponent<Gravity>();
+                    if(g == null)
+                    {
+                        continue;
+                    }
+
                     GameObject fakeT = Instantiate(go);
+
+                    g = fakeT.GetComponent<Gravity>();
+                    g.v0 = go.GetComponent<Rigidbody>().velocity;
+
                     fakeT.transform.position = go.transform.position;
                     fakeT.transform.rotation = go.transform.rotation;
-                    
 
                     Renderer fakeR = fakeT.GetComponent<Renderer>();
                     if(fakeR){
-                        //fakeR.enabled = false;
+                        fakeR.enabled = false;
                     }
                     SceneManager.MoveGameObjectToScene(fakeT, simulationScene);
 
                     dummys.Add(fakeT);
                 }
             }
-        }
+
+            foreach(GameObject o in dummys)
+            {
+                foreach (Renderer r in o.GetComponentsInChildren<Renderer>())
+                    r.enabled = false;
+            }
+        //}
         first = false;
 
         lineRenderer.positionCount = 0;
         lineRenderer.positionCount = maxIterations;
 
+        //twin.transform.position = this.transform.position;
+        //twin.transform.rotation = this.transform.rotation;
+
         for(int i = 0; i<maxIterations; i++)
         {
-            /*foreach(GameObject o in dummys)
+            foreach(GameObject o in dummys)
             {
                 Gravity g = o.GetComponent<Gravity>();
 
                 if(g != null)
                 {
-                    g.gravityRun();
+                    g.gravityRun(simulationPhysicsScene);
                 }
-            }*/
-
-            twin.GetComponent<Gravity>().gravityRun();
+            }
 
             simulationPhysicsScene.Simulate(Time.fixedDeltaTime);
 
@@ -116,7 +133,7 @@ public class TrajectoryPreview : MonoBehaviour
 
             
         }
-        //destroyAll();
+        destroyAll();
         first = false;
     }
 

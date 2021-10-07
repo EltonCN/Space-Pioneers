@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
- 
+using UnityEngine.SceneManagement;
+
+
 [AddComponentMenu("SpacePioneers/Gravity/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
@@ -14,23 +16,24 @@ public class Gravity : MonoBehaviour
     private bool showRange = false;
 
     [SerializeField]
-    private Vector3 v0 = new Vector3(0f, 0f, 0f);
+    public Vector3 v0 = new Vector3(0f, 0f, 0f);
 
     Rigidbody ownRb;
- 
-    void Awake()
-    {
-    }
+
+    PhysicsScene scene;
+
 
     void Start()
     {
         ownRb = GetComponent<Rigidbody>();
         ownRb.velocity = v0;
+
+        scene = this.gameObject.scene.GetPhysicsScene();
     }
  
     void FixedUpdate()
     {
-        gravityRun();
+        gravityRun(scene);
     }
 
     public void gravityRun()
@@ -46,7 +49,7 @@ public class Gravity : MonoBehaviour
         foreach (Collider c in cols)
         {
             Rigidbody rb = c.attachedRigidbody;
-            if (rb != null && rb != ownRb && !rbs.Contains(rb)  && (rb.gameObject.scene.name != "SimulationTrajetory") )
+            if (rb != null && rb != ownRb && !rbs.Contains(rb))
             {
                 rbs.Add(rb);
                 Vector3 offset = transform.position - c.transform.position;
@@ -57,7 +60,46 @@ public class Gravity : MonoBehaviour
 
                 if (!float.IsNaN(force.x) && !float.IsNaN(force.y) && !float.IsNaN(force.z) && force.magnitude < 1000f)
                 {
-                    
+                    rb.AddForce(force);
+                }
+                
+            }
+        }
+    }
+
+    public void gravityRun(PhysicsScene scene)
+    {
+        if(ownRb == null)
+        {
+            ownRb = GetComponent<Rigidbody>();
+            ownRb.velocity = v0;
+        }
+
+        Collider[] cols = new Collider[100];
+        int nCollider = scene.OverlapSphere(transform.position, range, cols, ~0, QueryTriggerInteraction.UseGlobal);
+        List<Rigidbody> rbs = new List<Rigidbody>();
+ 
+        /*if((this.gameObject.scene.name == "SimulationTrajetory"))
+        {
+            print(this.gameObject.name+" "+nCollider+" "+v0);
+        }*/
+
+        for(int i = 0; i<nCollider; i++)
+        {
+            Collider c = cols[i];
+
+            Rigidbody rb = c.attachedRigidbody;
+            if (rb != null && rb != ownRb && !rbs.Contains(rb))
+            {
+                rbs.Add(rb);
+                Vector3 offset = transform.position - c.transform.position;
+                
+                Vector3 dir = offset.normalized;
+
+                Vector3 force = (gravityConstant* dir* ownRb.mass * rb.mass) / offset.sqrMagnitude;
+
+                if (!float.IsNaN(force.x) && !float.IsNaN(force.y) && !float.IsNaN(force.z))
+                {
                     rb.AddForce(force);
                 }
                 
