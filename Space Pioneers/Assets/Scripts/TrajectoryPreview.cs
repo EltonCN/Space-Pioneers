@@ -33,8 +33,6 @@ public class TrajectoryPreview : MonoBehaviour
 
     }
 
-    
-
     void destroyAll()
     {
         foreach(var o in dummys){
@@ -48,68 +46,61 @@ public class TrajectoryPreview : MonoBehaviour
     void simular()
     {
         
-        /*if(first)
-        {*/
-            twin = Instantiate(this.gameObject);
-            twin.transform.position = this.transform.position;
-            twin.transform.rotation = this.transform.rotation;
+        twin = Instantiate(this.gameObject);
+        twin.transform.position = this.transform.position;
+        twin.transform.rotation = this.transform.rotation;
 
-            twin.GetComponent<Renderer>().enabled = false;
-            twin.GetComponent<TrajectoryPreview>().enabled = false;
+        twin.GetComponent<Renderer>().enabled = false;
+        twin.GetComponent<TrajectoryPreview>().enabled = false;
 
-            twin.GetComponent<Gravity>().v0 = this.GetComponent<Rigidbody>().velocity;
+        twin.GetComponent<Gravity>().v0 = this.GetComponent<Rigidbody>().velocity;
 
-            SceneManager.MoveGameObjectToScene(twin, simulationScene);
+        SceneManager.MoveGameObjectToScene(twin, simulationScene);
 
-            dummys.Add(twin);
+        dummys.Add(twin);
 
-            Collider[] cols = Physics.OverlapSphere(transform.position, range);
-            List<Rigidbody> rbs = new List<Rigidbody>();
-            
-            foreach (Collider c in cols)
+        Collider[] cols = Physics.OverlapSphere(transform.position, range);
+        List<Rigidbody> rbs = new List<Rigidbody>();
+        
+        foreach (Collider c in cols)
+        {
+            Rigidbody rb = c.attachedRigidbody;
+            if (rb != ownRb )
             {
-                Rigidbody rb = c.attachedRigidbody;
-                if (rb != ownRb )
+                GameObject go = c.gameObject;
+                
+                Gravity g = go.GetComponent<Gravity>();
+                if(g == null)
                 {
-                    GameObject go = c.gameObject;
-                    
-                    Gravity g = go.GetComponent<Gravity>();
-                    if(g == null)
-                    {
-                        continue;
-                    }
-
-                    GameObject fakeT = Instantiate(go);
-
-                    g = fakeT.GetComponent<Gravity>();
-                    g.v0 = go.GetComponent<Rigidbody>().velocity;
-
-                    fakeT.transform.position = go.transform.position;
-                    fakeT.transform.rotation = go.transform.rotation;
-
-                    Renderer fakeR = fakeT.GetComponent<Renderer>();
-                    if(fakeR){
-                        fakeR.enabled = false;
-                    }
-                    SceneManager.MoveGameObjectToScene(fakeT, simulationScene);
-
-                    dummys.Add(fakeT);
+                    continue;
                 }
-            }
 
-            foreach(GameObject o in dummys)
-            {
-                foreach (Renderer r in o.GetComponentsInChildren<Renderer>())
-                    r.enabled = false;
+                GameObject fakeT = Instantiate(go);
+
+                g = fakeT.GetComponent<Gravity>();
+                g.v0 = go.GetComponent<Rigidbody>().velocity;
+
+                fakeT.transform.position = go.transform.position;
+                fakeT.transform.rotation = go.transform.rotation;
+
+                Renderer fakeR = fakeT.GetComponent<Renderer>();
+                if(fakeR){
+                    fakeR.enabled = false;
+                }
+                SceneManager.MoveGameObjectToScene(fakeT, simulationScene);
+
+                dummys.Add(fakeT);
             }
-        //}
-        first = false;
+        }
+
+        foreach(GameObject o in dummys)
+        {
+            foreach (Renderer r in o.GetComponentsInChildren<Renderer>())
+                r.enabled = false;
+        }
 
         lineRenderer.positionCount = 0;
         lineRenderer.positionCount = maxIterations;
-
-        //twin.transform.position = this.transform.position;
-        //twin.transform.rotation = this.transform.rotation;
 
         for(int i = 0; i<maxIterations; i++)
         {
@@ -143,7 +134,16 @@ public class TrajectoryPreview : MonoBehaviour
         if(!initiated)
         {
             CreateSceneParameters param = new CreateSceneParameters(LocalPhysicsMode.Physics3D);
-            simulationScene = SceneManager.CreateScene("SimulationTrajetory", param);
+
+            string scene_name;
+            Scene scene;
+            do
+            {
+                scene_name = "SimulationTrajetory"+(int)Random.Range(0,100);
+                scene = SceneManager.GetSceneByName(scene_name);
+            }while(scene.IsValid());
+
+            simulationScene = SceneManager.CreateScene(scene_name, param);
             simulationPhysicsScene = simulationScene.GetPhysicsScene();
 
             lineRenderer = GetComponent<LineRenderer>();
