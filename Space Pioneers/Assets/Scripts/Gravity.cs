@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
- 
+using UnityEngine.SceneManagement;
+
+
 [AddComponentMenu("SpacePioneers/Gravity/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
@@ -14,27 +16,43 @@ public class Gravity : MonoBehaviour
     private bool showRange = false;
 
     [SerializeField]
-    private Vector3 v0 = new Vector3(0f, 0f, 0f);
+    public Vector3 v0 = new Vector3(0f, 0f, 0f);
 
     Rigidbody ownRb;
- 
-    void Awake()
-    {
-    }
+
+    PhysicsScene scene;
+
 
     void Start()
     {
         ownRb = GetComponent<Rigidbody>();
         ownRb.velocity = v0;
+
+        scene = this.gameObject.scene.GetPhysicsScene();
     }
  
     void FixedUpdate()
     {
-        Collider[] cols = Physics.OverlapSphere(transform.position, range);
-        List<Rigidbody> rbs = new List<Rigidbody>();
- 
-        foreach (Collider c in cols)
+        gravityRun(scene);
+    }
+
+
+    public void gravityRun(PhysicsScene scene)
+    {
+        if(ownRb == null)
         {
+            ownRb = GetComponent<Rigidbody>();
+            ownRb.velocity = v0;
+        }
+
+        Collider[] cols = new Collider[100];
+        int nCollider = scene.OverlapSphere(transform.position, range, cols, ~0, QueryTriggerInteraction.UseGlobal);
+        List<Rigidbody> rbs = new List<Rigidbody>();
+
+        for(int i = 0; i<nCollider; i++)
+        {
+            Collider c = cols[i];
+
             Rigidbody rb = c.attachedRigidbody;
             if (rb != null && rb != ownRb && !rbs.Contains(rb))
             {
@@ -43,7 +61,13 @@ public class Gravity : MonoBehaviour
                 
                 Vector3 dir = offset.normalized;
 
-                rb.AddForce((gravityConstant* dir* ownRb.mass * rb.mass) / offset.sqrMagnitude);
+                Vector3 force = (gravityConstant* dir* ownRb.mass * rb.mass) / offset.sqrMagnitude;
+
+                if (!float.IsNaN(force.x) && !float.IsNaN(force.y) && !float.IsNaN(force.z))
+                {
+                    rb.AddForce(force);
+                }
+                
             }
         }
     }
