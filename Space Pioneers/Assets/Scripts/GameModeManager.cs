@@ -10,10 +10,11 @@ public class GameModeManager : MonoBehaviour
 
     private static GameModeManager globalManager;
 
-    public event Action OnEnterPlanningMode, OnEnterActionMode;
+    [SerializeField] private List<GameModeSensitive> subscribers;
 
     private GameModeManager()
     {
+        subscribers = new List<GameModeSensitive>();
     }
 
     public static GameModeManager Instance
@@ -33,11 +34,27 @@ public class GameModeManager : MonoBehaviour
     {
         if(mode == GameMode.ACTION)
         {
-            OnEnterActionMode();
+            foreach(GameModeSensitive gms in this.subscribers)
+            {
+                gms.OnEnterActionMode();
+            }
         }
         else if (mode == GameMode.PLANNING)
         {
-            OnEnterPlanningMode();
+            foreach(GameModeSensitive gms in this.subscribers)
+            {
+                gms.OnEnterPlanningMode();
+            }   
         }
+    }
+
+    public void subscribe(GameModeSensitive gms)
+    {
+        this.subscribers.Add(gms);
+    }
+
+    public void unsubscribe(GameModeSensitive gms)
+    {
+        this.subscribers.Remove(gms);
     }
 }
