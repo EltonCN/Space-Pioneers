@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [AddComponentMenu("SpacePioneers/Gravity/Preview")]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(LineRenderer))]
-public class TrajectoryPreview : MonoBehaviour
+public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
 {
     [SerializeField]
     private int maxIterations = 10;
@@ -23,6 +23,15 @@ public class TrajectoryPreview : MonoBehaviour
     private Rigidbody ownRb;
 
     private GameObject twin = null;
+
+    private Vector3 v0;
+
+    private bool running = false;
+
+    private GameModeManager dummyGameModeManager;
+
+    [SerializeField] GameModeManager modeManager;
+    bool subscribed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +59,7 @@ public class TrajectoryPreview : MonoBehaviour
         twin.GetComponent<Renderer>().enabled = false;
         twin.GetComponent<TrajectoryPreview>().enabled = false;
 
-        twin.GetComponent<Gravity>().v0 = this.GetComponent<Rigidbody>().velocity;
+        twin.GetComponent<Gravity>().v0 = this.GetComponent<Frozen>().velocity;
 
         SceneManager.MoveGameObjectToScene(twin, simulationScene);
 
@@ -58,7 +67,8 @@ public class TrajectoryPreview : MonoBehaviour
 
         Collider[] cols = Physics.OverlapSphere(transform.position, range);
         List<Rigidbody> rbs = new List<Rigidbody>();
-        
+        twin.GetComponent<Rigidbody>().isKinematic = false;
+
         foreach (Collider c in cols)
         {
             Rigidbody rb = c.attachedRigidbody;
@@ -75,10 +85,14 @@ public class TrajectoryPreview : MonoBehaviour
                 GameObject fakeT = Instantiate(go);
 
                 g = fakeT.GetComponent<Gravity>();
-                g.v0 = go.GetComponent<Rigidbody>().velocity;
+                g.v0 = go.GetComponent<Frozen>().velocity;
+
+                g.modeManager = dummyGameModeManager;
 
                 fakeT.transform.position = go.transform.position;
                 fakeT.transform.rotation = go.transform.rotation;
+
+                go.GetComponent<Rigidbody>().isKinematic = false;
 
                 Renderer fakeR = fakeT.GetComponent<Renderer>();
                 if(fakeR){
@@ -94,6 +108,15 @@ public class TrajectoryPreview : MonoBehaviour
         {
             foreach (Renderer r in o.GetComponentsInChildren<Renderer>())
                 r.enabled = false;
+
+            
+            Frozen fr = o.GetComponent<Frozen>();
+
+            if(fr != null)
+            {
+                fr.enabled = false;
+                fr.modeManager = dummyGameModeManager;
+            }
         }
 
         lineRenderer.positionCount = 0;
@@ -127,6 +150,19 @@ public class TrajectoryPreview : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(subscribed == false)
+        {
+            if(modeManager == null)
+            {
+                modeManager = GameModeManager.Instance;   
+            }
+            if(modeManager != null)
+            {
+                modeManager.subscribe(this);
+                subscribed = true;
+            }
+        }
+
         if(!initiated)
         {
             CreateSceneParameters param = new CreateSceneParameters(LocalPhysicsMode.Physics3D);
@@ -146,10 +182,45 @@ public class TrajectoryPreview : MonoBehaviour
             lineRenderer.SetWidth(0.04f, 0.04f);
             lineRenderer.SetColors(Color.white, Color.white);
 
+            dummyGameModeManager = this.gameObject.AddComponent<GameModeManager>();
+
             initiated = true;
         }
 
-        simular();
+        if(running == true)
+        {
+            try
+            {
+                simular();
+            }
+            catch (System.Exception)
+            {
+                destroyAll();
+                print("Erro no trajectory");
+                throw;
+            }
+            
+        }
+    }
+
+    public void OnEnterActionMode()
+    {
+        running = false;
+
+        if(initiated)
+        {
+            this.lineRenderer.enabled = false;
+        }
+    }
+
+    public void OnEnterPlanningMode()
+    {
+        running = true;
+
+        if(initiated)
+        {
+            this.lineRenderer.enabled = true;
+        }
     }
 
 

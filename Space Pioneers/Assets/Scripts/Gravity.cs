@@ -14,7 +14,7 @@ public class Gravity : MonoBehaviour, GameModeSensitive
     private float gravityConstant  = 6.67408f;
     private bool frozen = false;
 
-    [SerializeField] GameModeManager modeManager;
+    [SerializeField] public GameModeManager modeManager;
 
     Rigidbody ownRb;
 

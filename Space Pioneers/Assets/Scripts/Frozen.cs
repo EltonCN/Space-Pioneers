@@ -6,10 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Frozen : MonoBehaviour, GameModeSensitive
 {
-    private Vector3 velocity;
+    public Vector3 velocity;
     private Rigidbody rb;
 
-    [SerializeField] GameModeManager modeManager;
+    [SerializeField] public GameModeManager modeManager;
     bool subscribed = false;
 
     void Start()
@@ -37,9 +37,9 @@ public class Frozen : MonoBehaviour, GameModeSensitive
     public void OnEnterActionMode()
     {
         rb.isKinematic = false;
-        rb.detectCollisions = true;
+        //rb.constraints = RigidbodyConstraints.FreezePositionY;
 
-        if(this.velocity != null)
+        if(this.velocity != null && subscribed)
         {
             rb.velocity = this.velocity;
         }
@@ -50,7 +50,7 @@ public class Frozen : MonoBehaviour, GameModeSensitive
         this.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
 
         rb.isKinematic = true;
-        rb.detectCollisions = false;
+        //rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
 

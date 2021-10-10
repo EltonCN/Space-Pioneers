@@ -86,10 +86,29 @@ public class GameModeManager : MonoBehaviour
     public void subscribe(GameModeSensitive gms)
     {
         this.subscribers.Add(gms);
+
+        callGameModeChange(gms);
     }
 
     public void unsubscribe(GameModeSensitive gms)
     {
         this.subscribers.Remove(gms);
+    }
+
+    public GameMode getCurrentMode()
+    {
+        return currentMode;
+    }
+
+    private void callGameModeChange(GameModeSensitive gms)
+    {
+        if(this.currentMode == GameMode.ACTION)
+        {
+            gms.OnEnterActionMode();
+        }
+        else if (this.currentMode == GameMode.PLANNING)
+        {
+            gms.OnEnterPlanningMode();
+        }
     }
 }
