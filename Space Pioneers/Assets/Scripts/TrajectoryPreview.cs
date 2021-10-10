@@ -40,9 +40,6 @@ public class TrajectoryPreview : MonoBehaviour
         }
         dummys.Clear();
     }
-    
-    bool first = true;
-
     void simular()
     {
         
@@ -125,7 +122,6 @@ public class TrajectoryPreview : MonoBehaviour
             
         }
         destroyAll();
-        first = false;
     }
 
     // Update is called once per frame
