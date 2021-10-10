@@ -8,25 +8,60 @@ public class GameModeManager : MonoBehaviour
 {
     public enum GameMode {PLANNING, ACTION};
 
+    [SerializeField] private GameModeManager globalInstace;
     private static GameModeManager globalManager;
 
-    [SerializeField] private List<GameModeSensitive> subscribers;
+    private List<GameModeSensitive> subscribers = new List<GameModeSensitive>();
 
-    private GameModeManager()
+    private GameMode currentMode = GameMode.ACTION;
+
+    void OnAfterDeserialize()
     {
-        subscribers = new List<GameModeSensitive>();
+        if(globalInstace != null)
+        {
+            globalManager = globalInstace;
+        }
+    }
+
+    void Start()
+    {
+        if(globalManager == null)
+        {
+            globalManager = this;
+        }
     }
 
     public static GameModeManager Instance
     {
         get
         {
-            if(globalManager == null)
-            {
-                globalManager = new GameModeManager();
-            }
-
             return globalManager;
+        }
+    }
+
+    public void enterActionMode()
+    {
+        changeGameMode(GameMode.ACTION);
+    }
+    public void enterPlanningMode()
+    {
+        changeGameMode(GameMode.PLANNING);
+    }
+
+    public void switchMode()
+    {
+        if(this.currentMode == GameMode.ACTION)
+        {
+            this.currentMode = GameMode.PLANNING;
+
+            enterPlanningMode();
+
+        }
+        else if (this.currentMode == GameMode.PLANNING)
+        {
+            this.currentMode = GameMode.ACTION;
+
+            enterActionMode();
         }
     }
 
