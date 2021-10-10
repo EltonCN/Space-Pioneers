@@ -28,6 +28,7 @@ public class Frozen : MonoBehaviour, GameModeSensitive
             if(modeManager != null)
             {
                 modeManager.subscribe(this);
+                subscribed = true;
             }
         }
         
@@ -46,7 +47,7 @@ public class Frozen : MonoBehaviour, GameModeSensitive
 
     public void OnEnterPlanningMode()
     {
-        this.velocity = rb.velocity;
+        this.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
 
         rb.isKinematic = true;
         rb.detectCollisions = false;
