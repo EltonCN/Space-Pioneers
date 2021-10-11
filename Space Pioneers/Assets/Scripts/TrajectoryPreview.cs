@@ -10,7 +10,7 @@ public class TrajectoryPreview : MonoBehaviour
 {
     [SerializeField]
     private int maxIterations = 10;
-    private float range = 10f;
+    private float range = 20f;
     private Scene simulationScene;
     private PhysicsScene simulationPhysicsScene;
 
@@ -30,6 +30,11 @@ public class TrajectoryPreview : MonoBehaviour
         initiated = false;
 
         ownRb = this.GetComponent<Rigidbody>();
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.04f;
+        lineRenderer.endWidth = 0.04f;
+        lineRenderer.startColor = Color.white;
+        lineRenderer.endColor = Color.white;
 
     }
 
@@ -145,11 +150,6 @@ public class TrajectoryPreview : MonoBehaviour
 
             simulationScene = SceneManager.CreateScene(scene_name, param);
             simulationPhysicsScene = simulationScene.GetPhysicsScene();
-
-            lineRenderer = GetComponent<LineRenderer>();
-            lineRenderer.SetWidth(0.04f, 0.04f);
-            lineRenderer.SetColors(Color.white, Color.white);
-
             initiated = true;
         }
 

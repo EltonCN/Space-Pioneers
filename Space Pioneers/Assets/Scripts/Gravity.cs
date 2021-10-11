@@ -66,6 +66,7 @@ public class Gravity : MonoBehaviour
                 if (!float.IsNaN(force.x) && !float.IsNaN(force.y) && !float.IsNaN(force.z))
                 {
                     rb.AddForce(force);
+                    rb.transform.rotation = Quaternion.LookRotation(rb.velocity, transform.up);
                 }
                 
             }
