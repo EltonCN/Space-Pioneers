@@ -13,7 +13,8 @@ public class SpaceShip : MonoBehaviour
         scene = SceneManager.GetActiveScene();
     }
 
-    private void OnCollisionEnter(Collision other) {
-        SceneManager.LoadScene(scene.name);
+    private void OnCollisionEnter(Collision other) 
+    {
+        //SceneManager.LoadScene(scene.name);
     }
 }

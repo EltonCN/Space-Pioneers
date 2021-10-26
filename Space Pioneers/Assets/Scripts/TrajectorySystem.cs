@@ -95,11 +95,13 @@ public class TrajectorySystem : ScriptableObject
             {
                 if(fr.enabled == true)
                 {
-                    fakeGrav.v0 = fr.velocity;
+                    fakeGrav.v0 = gravGameObj.GetComponent<Frozen>().velocity;
                 }
                 
                 fr.enabled = false;
             }
+
+            Debug.Log(fake.name+" GRAV "+fakeGrav.v0);
 
             TrajectoryPreview fakeTraj = fake.GetComponent<TrajectoryPreview>();
             
