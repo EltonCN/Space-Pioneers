@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 
-[AddComponentMenu("SpacePioneers/Gravity/Gravity")]
+[AddComponentMenu("SpacePioneers/Mechanics/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
 {

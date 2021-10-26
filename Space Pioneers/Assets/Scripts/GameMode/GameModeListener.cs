@@ -2,19 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("SpacePioneers/Game Mode/Game Mode Listener")]
 
-public class GameModeListener : MonoBehaviour
+public class GameModeListener : GameEventListener
 {
     [SerializeField] private List<MonoBehaviour> actionMechanics = new List<MonoBehaviour>();
     [SerializeField] private List<MonoBehaviour> planningMechanics = new List<MonoBehaviour>();
 
     [SerializeField] private GameMode firstMode = GameMode.ACTION;
 
+
     private GameMode gameMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        Response.AddListener(this.toggle);
+
         if(firstMode == GameMode.ACTION)
         {
             enterActionMode();

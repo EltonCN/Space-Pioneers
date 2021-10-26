@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[AddComponentMenu("SpacePioneers/Gravity/Preview")]
+[AddComponentMenu("SpacePioneers/Mechanics/Trajectory Preview")]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(LineRenderer))]
 public class TrajectoryPreview : MonoBehaviour

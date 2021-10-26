@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[AddComponentMenu("SpacePioneers/GameMode/Frozen")]
+[AddComponentMenu("SpacePioneers/Mechanics/Frozen")]
 [RequireComponent(typeof(Rigidbody))]
 public class Frozen : MonoBehaviour
 {
@@ -12,7 +12,6 @@ public class Frozen : MonoBehaviour
     void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
-        print(rb);
     }
 
     public void OnDisable()
