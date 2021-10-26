@@ -4,53 +4,34 @@ using UnityEngine;
 
 [AddComponentMenu("SpacePioneers/GameMode/Frozen")]
 [RequireComponent(typeof(Rigidbody))]
-public class Frozen : MonoBehaviour, GameModeSensitive
+public class Frozen : MonoBehaviour
 {
     public Vector3 velocity;
     private Rigidbody rb;
 
-    [SerializeField] public GameModeManager modeManager;
-    bool subscribed = false;
-
-    void Start()
+    void Awake()
     {
         rb = this.GetComponent<Rigidbody>();
+        print(rb);
     }
 
-    void Update()
-    {
-        if(subscribed == false)
-        {
-            if(modeManager == null)
-            {
-                modeManager = GameModeManager.Instance;   
-            }
-            if(modeManager != null)
-            {
-                modeManager.subscribe(this);
-                subscribed = true;
-            }
-        }
-        
-    }
-
-    public void OnEnterActionMode()
+    public void OnDisable()
     {
         rb.isKinematic = false;
-        //rb.constraints = RigidbodyConstraints.FreezePositionY;
+        rb.detectCollisions = true;
 
-        if(this.velocity != null && subscribed)
+        if(this.velocity != null)
         {
             rb.velocity = this.velocity;
         }
     }
 
-    public void OnEnterPlanningMode()
+    public void OnEnable()
     {
         this.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
 
         rb.isKinematic = true;
-        //rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.detectCollisions = false;
     }
 
 

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 [AddComponentMenu("SpacePioneers/Gravity/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
-public class Gravity : MonoBehaviour, GameModeSensitive
+public class Gravity : MonoBehaviour
 {
     [SerializeField] private float range = 10f;
     [SerializeField] private bool showRange = false;
@@ -13,8 +13,6 @@ public class Gravity : MonoBehaviour, GameModeSensitive
 
     private float gravityConstant  = 6.67408f;
     private bool frozen = false;
-
-    [SerializeField] public GameModeManager modeManager;
 
     Rigidbody ownRb;
 
@@ -27,12 +25,6 @@ public class Gravity : MonoBehaviour, GameModeSensitive
         ownRb.velocity = v0;
 
         scene = this.gameObject.scene.GetPhysicsScene();
-
-        if(modeManager == null)
-        {
-            modeManager = GameModeManager.Instance;
-        }
-        modeManager.subscribe(this);
     }
  
     void FixedUpdate()
@@ -88,15 +80,5 @@ public class Gravity : MonoBehaviour, GameModeSensitive
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, range);
         }
-    }
-
-    public void OnEnterActionMode()
-    {
-        frozen = false;   
-    }
-
-    public void OnEnterPlanningMode()
-    {
-        frozen = true;
     }
 }

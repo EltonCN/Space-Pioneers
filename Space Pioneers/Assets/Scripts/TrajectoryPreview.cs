@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [AddComponentMenu("SpacePioneers/Gravity/Preview")]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(LineRenderer))]
-public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
+public class TrajectoryPreview : MonoBehaviour
 {
     [SerializeField]
     private int maxIterations = 10;
@@ -28,9 +28,6 @@ public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
 
     private bool running = false;
 
-    private GameModeManager dummyGameModeManager;
-
-    [SerializeField] GameModeManager modeManager;
     bool subscribed = false;
 
     // Start is called before the first frame update
@@ -87,8 +84,6 @@ public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
                 g = fakeT.GetComponent<Gravity>();
                 g.v0 = go.GetComponent<Frozen>().velocity;
 
-                g.modeManager = dummyGameModeManager;
-
                 fakeT.transform.position = go.transform.position;
                 fakeT.transform.rotation = go.transform.rotation;
 
@@ -115,7 +110,6 @@ public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
             if(fr != null)
             {
                 fr.enabled = false;
-                fr.modeManager = dummyGameModeManager;
             }
         }
 
@@ -150,19 +144,6 @@ public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
     // Update is called once per frame
     void Update()
     {
-        if(subscribed == false)
-        {
-            if(modeManager == null)
-            {
-                modeManager = GameModeManager.Instance;   
-            }
-            if(modeManager != null)
-            {
-                modeManager.subscribe(this);
-                subscribed = true;
-            }
-        }
-
         if(!initiated)
         {
             CreateSceneParameters param = new CreateSceneParameters(LocalPhysicsMode.Physics3D);
@@ -181,8 +162,6 @@ public class TrajectoryPreview : MonoBehaviour, GameModeSensitive
             lineRenderer = GetComponent<LineRenderer>();
             lineRenderer.SetWidth(0.04f, 0.04f);
             lineRenderer.SetColors(Color.white, Color.white);
-
-            dummyGameModeManager = this.gameObject.AddComponent<GameModeManager>();
 
             initiated = true;
         }
