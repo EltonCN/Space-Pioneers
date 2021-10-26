@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-
 
 [AddComponentMenu("SpacePioneers/Mechanics/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
 {
-    [SerializeField] private GravityRS set;
+    [SerializeField] public GravityRS set;
 
     [SerializeField] private float range = 10f;
     [SerializeField] private bool showRange = false;
@@ -91,7 +89,7 @@ public class Gravity : MonoBehaviour
         set.Add(this);
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         set.Remove(this);
     }

@@ -546,7 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5159abca87c15a408cc56924f5a0c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIterations: 50
+  trajectorySet: {fileID: 11400000, guid: d50bffcf252f70843bfee805c19364c6, type: 2}
+  trajectorySystem: {fileID: 11400000, guid: 78c0c924a7e086943bf0f5ad1a9a40cf, type: 2}
 --- !u!120 &1158051424
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -689,6 +690,7 @@ MonoBehaviour:
   - {fileID: 1158051420}
   planningMechanics:
   - {fileID: 1158051426}
+  - {fileID: 1158051423}
   firstMode: 1
 --- !u!1 &1316467064
 GameObject:
@@ -1486,7 +1488,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5159abca87c15a408cc56924f5a0c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIterations: 100
+  trajectorySet: {fileID: 11400000, guid: d50bffcf252f70843bfee805c19364c6, type: 2}
+  trajectorySystem: {fileID: 11400000, guid: 78c0c924a7e086943bf0f5ad1a9a40cf, type: 2}
 --- !u!120 &2021436681
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1616,4 +1619,5 @@ MonoBehaviour:
   - {fileID: 2021436676}
   planningMechanics:
   - {fileID: 2021436682}
+  - {fileID: 2021436680}
   firstMode: 1
