@@ -1,22 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
-
-[AddComponentMenu("SpacePioneers/Gravity/Gravity")]
+[AddComponentMenu("SpacePioneers/Mechanics/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
 {
-    [SerializeField]
-    private float range = 10f;
- 
+    [SerializeField] public GravityRS set;
+
+    [SerializeField] private float range = 10f;
+    [SerializeField] private bool showRange = false;
+    [SerializeField] public Vector3 v0 = new Vector3(0f, 0f, 0f);
+
     private float gravityConstant  = 6.67408f;
-
-    [SerializeField]
-    private bool showRange = false;
-
-    [SerializeField]
-    public Vector3 v0 = new Vector3(0f, 0f, 0f);
+    private bool frozen = false;
 
     Rigidbody ownRb;
 
@@ -33,6 +29,11 @@ public class Gravity : MonoBehaviour
  
     void FixedUpdate()
     {
+        if(frozen)
+        {
+            return;   
+        }
+
         gravityRun(scene);
     }
 
@@ -45,19 +46,21 @@ public class Gravity : MonoBehaviour
             ownRb.velocity = v0;
         }
 
-        Collider[] cols = new Collider[100];
-        int nCollider = scene.OverlapSphere(transform.position, range, cols, ~0, QueryTriggerInteraction.UseGlobal);
         List<Rigidbody> rbs = new List<Rigidbody>();
 
-        for(int i = 0; i<nCollider; i++)
+        foreach(Gravity g in set.Items)
         {
-            Collider c = cols[i];
+            Rigidbody rb = g.GetComponent<Rigidbody>();
 
-            Rigidbody rb = c.attachedRigidbody;
             if (rb != null && rb != ownRb && !rbs.Contains(rb))
             {
                 rbs.Add(rb);
-                Vector3 offset = transform.position - c.transform.position;
+                Vector3 offset = transform.position - rb.transform.position;
+
+                if(offset.magnitude > range)
+                {
+                    continue;
+                }
                 
                 Vector3 dir = offset.normalized;
 
@@ -80,5 +83,15 @@ public class Gravity : MonoBehaviour
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireSphere(transform.position, range);
         }
+    }
+
+    void OnEnable()
+    {
+        set.Add(this);
+    }
+
+    void OnDestroy()
+    {
+        set.Remove(this);
     }
 }
