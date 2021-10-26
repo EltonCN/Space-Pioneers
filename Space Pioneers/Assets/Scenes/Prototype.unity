@@ -376,57 +376,13 @@ RectTransform:
   m_Children:
   - {fileID: 1455664442}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &937225060
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 937225062}
-  - component: {fileID: 937225061}
-  m_Layer: 0
-  m_Name: ModeManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &937225061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937225060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a55deff5d3b4f24480f04e22c95d7c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalInstace: {fileID: 937225061}
---- !u!4 &937225062
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937225060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1096048, y: -0.59626245, z: 0.3534755}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1037532906
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +479,7 @@ GameObject:
   - component: {fileID: 1158051423}
   - component: {fileID: 1158051425}
   - component: {fileID: 1158051426}
+  - component: {fileID: 1158051427}
   m_Layer: 0
   m_Name: Planeta (2)
   m_TagString: Untagged
@@ -537,15 +494,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158051419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ad0ef5fb4e7e340b7104f57314c6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 20
   showRange: 1
   v0: {x: 10, y: 0, z: 0}
-  modeManager: {fileID: 0}
 --- !u!54 &1158051421
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -584,13 +541,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158051419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5159abca87c15a408cc56924f5a0c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxIterations: 50
-  modeManager: {fileID: 0}
 --- !u!120 &1158051424
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -707,13 +663,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158051419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  modeManager: {fileID: 0}
+--- !u!114 &1158051427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158051419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  actionMechanics:
+  - {fileID: 1158051420}
+  planningMechanics:
+  - {fileID: 1158051426}
+  firstMode: 1
 --- !u!1 &1316467064
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +784,7 @@ GameObject:
   - component: {fileID: 1416178492}
   - component: {fileID: 1416178495}
   - component: {fileID: 1416178496}
+  - component: {fileID: 1416178497}
   m_Layer: 0
   m_Name: Planeta
   m_TagString: Untagged
@@ -822,15 +799,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416178491}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ad0ef5fb4e7e340b7104f57314c6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 20
   showRange: 1
   v0: {x: -10, y: 0, z: 0}
-  modeManager: {fileID: 0}
 --- !u!54 &1416178493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -882,13 +859,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416178491}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  modeManager: {fileID: 0}
+--- !u!114 &1416178497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416178491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  actionMechanics:
+  - {fileID: 1416178492}
+  planningMechanics:
+  - {fileID: 1416178496}
+  firstMode: 1
 --- !u!1 &1442749381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,9 +1066,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937225061}
-        m_TargetAssemblyTypeName: GameModeManager, Assembly-CSharp
-        m_MethodName: switchMode
+      - m_Target: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1299,7 +1296,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1856410637
 GameObject:
@@ -1409,6 +1406,7 @@ GameObject:
   - component: {fileID: 2021436681}
   - component: {fileID: 2021436680}
   - component: {fileID: 2021436682}
+  - component: {fileID: 2021436683}
   m_Layer: 0
   m_Name: Planeta (1)
   m_TagString: Untagged
@@ -1423,15 +1421,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021436675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ad0ef5fb4e7e340b7104f57314c6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 20
   showRange: 1
   v0: {x: 0, y: 0, z: 0}
-  modeManager: {fileID: 0}
 --- !u!54 &2021436677
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1483,13 +1481,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021436675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5159abca87c15a408cc56924f5a0c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxIterations: 100
-  modeManager: {fileID: 0}
 --- !u!120 &2021436681
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1593,10 +1590,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021436675}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
-  modeManager: {fileID: 0}
+--- !u!114 &2021436683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021436675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  actionMechanics:
+  - {fileID: 2021436676}
+  planningMechanics:
+  - {fileID: 2021436682}
+  firstMode: 1
