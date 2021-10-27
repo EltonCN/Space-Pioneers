@@ -72,7 +72,7 @@ public class TrajectorySystem : ScriptableObject
         GravityRS gravRS = ScriptableObject.CreateInstance<GravityRS>();
         TrajectoryRS trajRS = ScriptableObject.CreateInstance<TrajectoryRS>();
 
-        foreach(Gravity grav in gravitySet.Items)
+        foreach(Gravity grav in gravitySet.Items.ToArray())
         {
             GameObject gravGameObj = grav.gameObject;
 
