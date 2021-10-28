@@ -1,0 +1,71 @@
+{
+    "name": "PointClickActions",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "088824e5-116d-4123-af75-654f74ad9e96",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "21008fc3-988b-4936-84e1-498c38703ac0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Drag",
+                    "type": "Value",
+                    "id": "8eefa2ec-38c0-4a5c-8c55-002261ad0c27",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MousePosition",
+                    "type": "Value",
+                    "id": "1c5090e3-411c-4001-a56f-3e9e170845eb",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b50a503e-5744-4fc7-9595-8c66ed81d244",
+                    "path": "<Mouse>/delta",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Drag",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac4e6b1a-3075-4cc2-a67c-293d569fe889",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c52c5bc0-d6fd-47a1-899a-f862a7b7a8c3",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
