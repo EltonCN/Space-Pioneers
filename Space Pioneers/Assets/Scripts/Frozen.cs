@@ -30,7 +30,7 @@ public class Frozen : MonoBehaviour
         this.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
 
         rb.isKinematic = true;
-        rb.detectCollisions = false;
+        //rb.detectCollisions = false;
     }
 
 

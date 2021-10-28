@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 public class PlaceMe : MonoBehaviour, Draggable
 {
     Rigidbody rb;
-    [SerializeField] float desiredZ = 20;
+    [SerializeField] float desiredY = 20;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -25,10 +25,12 @@ public class PlaceMe : MonoBehaviour, Draggable
     public void OnMouseDrag(InputAction.CallbackContext context)
     {   
         Vector3 mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = desiredZ - Camera.main.transform.position.z;
+        mousePos.z = Camera.main.transform.position.y - desiredY;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
-        transform.position = worldPoint;   
+        rb.MovePosition(worldPoint);   
+
+        Debug.Log(worldPoint);
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
