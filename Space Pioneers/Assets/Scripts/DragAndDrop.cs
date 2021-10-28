@@ -47,10 +47,9 @@ public class DragAndDrop : MonoBehaviour, Draggable
 
             if (currentDragger != null)
             {
-                currentDragger.OnMouseDown(context);
                 // Registro dos eventos de Drag nesse ciclo, uma lista dos objetos a serem movidos pelo mouse
+                currentDragger.OnMouseDown(context);
                 drag.performed += currentDragger.OnMouseDrag;
-                //Debug.Log("Hittou alguma coisa");
             }
         }
     }
@@ -59,8 +58,15 @@ public class DragAndDrop : MonoBehaviour, Draggable
     {
         // Quando o botão do mouse é solto, apagamos da lista de EventHandlers drag.performed 
         // o método OnMouseDrag e chamamos o método que realiza as ações ao soltar o botão do Mouse
-        drag.performed -= currentDragger.OnMouseDrag;
-        currentDragger.OnMouseUp(context);
+        
+        try {
+            drag.performed -= currentDragger.OnMouseDrag;
+            currentDragger.OnMouseUp(context);
+        }
+        catch (NullReferenceException)
+        {
+            // Debug.Log("Não selecionou nada");
+        }
         // OBSERVAÇÃO: se nenhum OnMouseDrag tiver sido registrado anteriormente, essa operação
         // não faz anda pois desregistrar um método não registrado como C#Event é Operação Nula
     }

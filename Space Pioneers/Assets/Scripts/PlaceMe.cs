@@ -4,14 +4,12 @@ using UnityEngine.InputSystem;
 public class PlaceMe : MonoBehaviour, Draggable
 {
     Rigidbody rb;
-    Camera cam;
-    RaycastHit hit;
+    [SerializeField] float desiredZ = 20;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        cam = Camera.main;
     }
 
     void Update()
@@ -21,22 +19,20 @@ public class PlaceMe : MonoBehaviour, Draggable
 
     public void OnMouseDown(InputAction.CallbackContext context)
     {
-        //rb.isKinematic = true;
+        rb.isKinematic = true;
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
-    {
+    {   
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = desiredZ - Camera.main.transform.position.z;
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
-        //Mouse.current. ;
-
-        //Vector3 c = Camera.main.transform.position;
-
-
-        Debug.Log("Hello There");
+        transform.position = worldPoint;   
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
     {
-        //rb.isKinematic = false;
+        rb.isKinematic = false;
     }
 }
