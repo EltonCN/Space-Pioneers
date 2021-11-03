@@ -1300,7 +1300,6 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 10
   showRange: 0
-  v0: {x: 10, y: 0, z: 0}
 --- !u!54 &1727338243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1630,6 +1629,10 @@ PrefabInstance:
       propertyPath: globalState
       value: 
       objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+    - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: v0.x
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
@@ -1666,6 +1669,7 @@ GameObject:
   - component: {fileID: 1727338242}
   - component: {fileID: 919132147995403900}
   - component: {fileID: 919132147995403899}
+  - component: {fileID: 919132147995403901}
   m_Layer: 0
   m_Name: simpleSpaceShip
   m_TagString: Untagged
@@ -1719,6 +1723,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+--- !u!114 &919132147995403901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147995403897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238341c629dce9740a65763c13858056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 10, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
 --- !u!23 &1711813854923048876
 MeshRenderer:
