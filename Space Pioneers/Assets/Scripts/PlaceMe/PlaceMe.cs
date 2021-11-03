@@ -5,6 +5,10 @@ public class PlaceMe : MonoBehaviour, Draggable
 {
     Rigidbody rb;
     [SerializeField] float desiredY = 20;
+    [SerializeField] ActionSnapshotRS actionSet;
+    [SerializeField] FloatVariable cost;
+
+    PlaceMeSnapshot snapshot;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +24,9 @@ public class PlaceMe : MonoBehaviour, Draggable
     public void OnMouseDown(InputAction.CallbackContext context)
     {
         rb.isKinematic = true;
+
+        snapshot = new PlaceMeSnapshot(this, rb.position);
+        actionSet.Add(snapshot);
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
@@ -28,13 +35,69 @@ public class PlaceMe : MonoBehaviour, Draggable
         mousePos.z = Camera.main.transform.position.y - desiredY;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
-        rb.MovePosition(worldPoint);   
+        MoveTo(worldPoint);
 
-        Debug.Log(worldPoint);
+        snapshot.Cost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
     {
         rb.isKinematic = false;
+        snapshot = null;
+    }
+
+    private void MoveTo(Vector3 position)
+    {
+        rb.MovePosition(position);
+    }
+
+    public class PlaceMeSnapshot : ActionSnapshot
+    {
+        PlaceMe originator;
+        Vector3 originalPosition;
+        float cost;
+
+        public PlaceMeSnapshot(PlaceMe originator, Vector3 originalPosition, float cost = 0)
+        {
+            this.originator = originator;
+            this.originalPosition = originalPosition;
+            this.cost = cost; 
+        }
+
+        public float Cost
+        {
+            get
+            {
+                return this.cost;
+            }
+            
+            set
+            {
+                this.cost = value;
+            }
+        }
+
+        public Vector3 OriginalPosition
+        {
+            get
+            {
+                return this.originalPosition;
+            }
+        }
+
+        public void undo()
+        {
+            originator.MoveTo(originalPosition);
+        }
+
+        public float getActionCost()
+        {
+            return this.cost;
+        }
+
+        public string getActionMessage()
+        {
+            return "Mover entidade";
+        }
     }
 }
