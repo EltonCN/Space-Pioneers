@@ -533,6 +533,9 @@ MonoBehaviour:
       m_Calls: []
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   onGameModeChange: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+  actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
+  costToSecond: {fileID: 11400000, guid: bf7bdb11104cef44abed1c5ee2ee9cfd, type: 2}
+  cooldown: 0
 --- !u!1 &713584621
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +606,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Alterar modo de jogo
 --- !u!222 &713584624
 CanvasRenderer:
   m_ObjectHideFlags: 0

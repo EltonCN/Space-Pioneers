@@ -5,6 +5,10 @@ public class PlaceMe : MonoBehaviour, Draggable
 {
     Rigidbody rb;
     [SerializeField] float desiredY = 20;
+    [SerializeField] ActionSnapshotRS actionSet;
+    [SerializeField] FloatVariable cost;
+
+    PlaceMeSnapshot snapshot;
 
     // Start is called before the first frame update
     void Awake()
@@ -20,6 +24,9 @@ public class PlaceMe : MonoBehaviour, Draggable
     public void OnMouseDown(InputAction.CallbackContext context)
     {
         rb.isKinematic = true;
+
+        snapshot = new PlaceMeSnapshot(this, rb.position);
+        actionSet.Add(snapshot);
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
@@ -29,8 +36,8 @@ public class PlaceMe : MonoBehaviour, Draggable
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
         MoveTo(worldPoint);
-
-        Debug.Log(worldPoint);
+        
+        snapshot.Cost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
@@ -47,16 +54,16 @@ public class PlaceMe : MonoBehaviour, Draggable
     {
         PlaceMe originator;
         Vector3 originalPosition;
-        int cost;
+        float cost;
 
-        public PlaceMeSnapshot(PlaceMe originator, Vector3 originalPosition, int cost = 0)
+        public PlaceMeSnapshot(PlaceMe originator, Vector3 originalPosition, float cost = 0)
         {
             this.originator = originator;
             this.originalPosition = originalPosition;
             this.cost = cost; 
         }
 
-        public int Cost
+        public float Cost
         {
             get
             {
@@ -65,7 +72,15 @@ public class PlaceMe : MonoBehaviour, Draggable
             
             set
             {
-                this.cost = Cost;
+                this.cost = value;
+            }
+        }
+
+        public Vector3 OriginalPosition
+        {
+            get
+            {
+                return this.originalPosition;
             }
         }
 
@@ -74,7 +89,7 @@ public class PlaceMe : MonoBehaviour, Draggable
             originator.MoveTo(originalPosition);
         }
 
-        public int getActionCost()
+        public float getActionCost()
         {
             return this.cost;
         }

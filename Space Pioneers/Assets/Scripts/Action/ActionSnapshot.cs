@@ -4,5 +4,5 @@ public interface ActionSnapshot
     
     public string getActionMessage();
 
-    public int getActionCost();
+    public float getActionCost();
 }

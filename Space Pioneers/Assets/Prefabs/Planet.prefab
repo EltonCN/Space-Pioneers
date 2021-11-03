@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8283630942306210951}
   - component: {fileID: 774147704}
   - component: {fileID: 3352119739594653874}
+  - component: {fileID: 5571241644449324552}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -94,7 +95,6 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 100
   showRange: 0
-  v0: {x: 0, y: 0, z: 0}
 --- !u!114 &774147704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredY: -1.18
+  actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
+  cost: {fileID: 11400000, guid: cc6ad387fc4b3334991d5b59d14e11d8, type: 2}
 --- !u!114 &3352119739594653874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,20 @@ MonoBehaviour:
   - {fileID: 37411370049452579}
   - {fileID: 774147704}
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+--- !u!114 &5571241644449324552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152400458543118747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238341c629dce9740a65763c13858056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialVelocity: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &8445249125058861883
 GameObject:
   m_ObjectHideFlags: 0
