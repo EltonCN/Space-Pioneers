@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 37411370049452579}
   - component: {fileID: 8283630942306210951}
   - component: {fileID: 774147704}
-  - component: {fileID: 3562409172953274091}
+  - component: {fileID: 3352119739594653874}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   desiredY: -1.18
---- !u!114 &3562409172953274091
+--- !u!114 &3352119739594653874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2152400458543118747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Script: {fileID: 11500000, guid: 06de26cf03eec2147b4838d27b2d685a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
@@ -129,7 +129,7 @@ MonoBehaviour:
   planningMechanics:
   - {fileID: 37411370049452579}
   - {fileID: 774147704}
-  firstMode: 1
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
 --- !u!1 &8445249125058861883
 GameObject:
   m_ObjectHideFlags: 0

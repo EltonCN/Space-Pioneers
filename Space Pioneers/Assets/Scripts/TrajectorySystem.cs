@@ -132,7 +132,6 @@ public class TrajectorySystem : ScriptableObject
             SceneManager.MoveGameObjectToScene(fake, simulationScene);
         }
 
-        Debug.Log(index);
         Physics.autoSimulation = false;
         for(int i = 0; i<maxIterations; i++)
         {
