@@ -36,13 +36,14 @@ public class PlaceMe : MonoBehaviour, Draggable
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
         MoveTo(worldPoint);
-        
+
         snapshot.Cost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
     {
         rb.isKinematic = false;
+        snapshot = null;
     }
 
     private void MoveTo(Vector3 position)
