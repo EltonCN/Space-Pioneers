@@ -82,6 +82,7 @@ public class TrajectorySystem : ScriptableObject
 
 
             Gravity fakeGrav = fake.GetComponent<Gravity>();
+            fakeGrav.set.Remove(fakeGrav);
             fakeGrav.set = gravRS;
             fakeGrav.enabled = true;
 
@@ -100,8 +101,6 @@ public class TrajectorySystem : ScriptableObject
                 
                 fr.enabled = false;
             }
-
-            Debug.Log(fake.name+" GRAV "+fakeGrav.v0);
 
             TrajectoryPreview fakeTraj = fake.GetComponent<TrajectoryPreview>();
             
@@ -132,7 +131,6 @@ public class TrajectorySystem : ScriptableObject
             SceneManager.MoveGameObjectToScene(fake, simulationScene);
         }
 
-        Debug.Log(index);
         Physics.autoSimulation = false;
         for(int i = 0; i<maxIterations; i++)
         {
@@ -151,6 +149,7 @@ public class TrajectorySystem : ScriptableObject
 
             foreach(GameObject go in fakeWithTrajectory)
             {
+
                 Vector3 position = new Vector3(go.transform.position.x, 
                                                 go.transform.position.y, 
                                                 go.transform.position.z);

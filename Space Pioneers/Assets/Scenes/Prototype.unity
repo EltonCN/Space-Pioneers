@@ -374,7 +374,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: globalState
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
 --- !u!1 &657112440
 GameObject:
@@ -388,6 +393,7 @@ GameObject:
   - component: {fileID: 657112444}
   - component: {fileID: 657112443}
   - component: {fileID: 657112442}
+  - component: {fileID: 657112445}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -459,7 +465,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+      - m_Target: {fileID: 11400000, guid: 7ced3d29e38f7eb40a214db3d4709e07, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -509,6 +515,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657112440}
   m_CullTransparentMesh: 1
+--- !u!114 &657112445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657112440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7ced3d29e38f7eb40a214db3d4709e07, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+  onGameModeChange: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
 --- !u!1 &713584621
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,7 +741,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: globalState
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
 --- !u!1 &1442749381
 GameObject:
@@ -937,7 +966,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: globalState
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
 --- !u!1 &1599938186
 GameObject:
@@ -1592,7 +1626,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: globalState
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+    m_RemovedComponents:
+    - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
 --- !u!4 &543450651646508227
 Transform:
@@ -1655,7 +1694,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132147995403897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37ecdb223462144b97ca067839dde34, type: 3}
+  m_Script: {fileID: 11500000, guid: 06de26cf03eec2147b4838d27b2d685a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
@@ -1665,9 +1704,9 @@ MonoBehaviour:
   actionMechanics:
   - {fileID: 1727338242}
   planningMechanics:
-  - {fileID: 1727338240}
   - {fileID: 919132147995403900}
-  firstMode: 1
+  - {fileID: 1727338240}
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
 --- !u!114 &919132147995403900
 MonoBehaviour:
   m_ObjectHideFlags: 0

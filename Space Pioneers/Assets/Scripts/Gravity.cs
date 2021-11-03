@@ -26,6 +26,11 @@ public class Gravity : MonoBehaviour
 
         scene = this.gameObject.scene.GetPhysicsScene();
     }
+
+    void Awake()
+    {
+        set.Add(this);
+    }
  
     void FixedUpdate()
     {
@@ -85,10 +90,6 @@ public class Gravity : MonoBehaviour
         }
     }
 
-    void OnEnable()
-    {
-        set.Add(this);
-    }
 
     void OnDestroy()
     {
