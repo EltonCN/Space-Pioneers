@@ -5,11 +5,10 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody))]
 public class Gravity : MonoBehaviour
 {
-    [SerializeField] public GravityRS set;
+    [SerializeField] private GravityRS set;
 
     [SerializeField] private float range = 10f;
     [SerializeField] private bool showRange = false;
-    [SerializeField] public Vector3 v0 = new Vector3(0f, 0f, 0f);
 
     private float gravityConstant  = 6.67408f;
     private bool frozen = false;
@@ -18,12 +17,24 @@ public class Gravity : MonoBehaviour
 
     PhysicsScene scene;
 
+    public GravityRS GravityRS
+    {
+        get
+        {
+            return this.set;
+        }
+        set
+        {
+            this.set.Remove(this);
+            this.set = value;
+            set.Add(this);
+        }
+    }
+
 
     void Start()
     {
         ownRb = GetComponent<Rigidbody>();
-        ownRb.velocity = v0;
-
         scene = this.gameObject.scene.GetPhysicsScene();
     }
 
@@ -48,11 +59,10 @@ public class Gravity : MonoBehaviour
         if(ownRb == null)
         {
             ownRb = GetComponent<Rigidbody>();
-            ownRb.velocity = v0;
         }
 
-        List<Rigidbody> rbs = new List<Rigidbody>();
 
+        List<Rigidbody> rbs = new List<Rigidbody>();
         foreach(Gravity g in set.Items)
         {
             Rigidbody rb = g.GetComponent<Rigidbody>();

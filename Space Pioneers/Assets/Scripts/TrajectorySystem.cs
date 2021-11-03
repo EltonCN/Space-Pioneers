@@ -82,8 +82,7 @@ public class TrajectorySystem : ScriptableObject
 
 
             Gravity fakeGrav = fake.GetComponent<Gravity>();
-            fakeGrav.set.Remove(fakeGrav);
-            fakeGrav.set = gravRS;
+            fakeGrav.GravityRS = gravRS;
             fakeGrav.enabled = true;
 
             Renderer fakeR = fake.GetComponent<Renderer>();
@@ -92,14 +91,16 @@ public class TrajectorySystem : ScriptableObject
             }
 
             Frozen fr = fake.GetComponent<Frozen>();
+            Velocity vl = fake.GetComponent<Velocity>();
             if(fr != null)
             {
+                vl.enabled = true;
                 if(fr.enabled == true)
                 {
-                    fakeGrav.v0 = gravGameObj.GetComponent<Frozen>().velocity;
+                    fr.enabled = false;
+                    vl.ActualVelocity = gravGameObj.GetComponent<Velocity>().ActualVelocity;
                 }
-                
-                fr.enabled = false;
+                vl.enabled = false;
             }
 
             TrajectoryPreview fakeTraj = fake.GetComponent<TrajectoryPreview>();
