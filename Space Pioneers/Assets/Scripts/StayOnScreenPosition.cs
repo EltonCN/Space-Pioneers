@@ -5,15 +5,23 @@ using UnityEngine;
 [AddComponentMenu("SpacePioneers/Stay On Screen Position")]
 public class StayOnScreenPosition : MonoBehaviour
 {
-    Vector3 position;
-    void Start()
-    {
-        position = Camera.main.WorldToScreenPoint(transform.position);
-    }
+    [SerializeField] Vector3 targetScreenPosition;
+    [SerializeField] Vector3 actualScreenPosition;
+    [SerializeField] bool updateTarget = false;
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position = Camera.main.ScreenToWorldPoint(position);
+        transform.position = Camera.main.ScreenToWorldPoint(targetScreenPosition);
+    }
+
+    void OnValidate()
+    {
+        actualScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
+
+        if(updateTarget)
+        {
+            targetScreenPosition = actualScreenPosition;
+            updateTarget = false;
+        }
     }
 }

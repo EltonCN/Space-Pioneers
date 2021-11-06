@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TrajectorySystem
   m_EditorClassIdentifier: 
   computeInterval: 0.1
-  maxIterations: 100
+  maxIterations: 250
   gravitySet: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   trajectorySet: {fileID: 11400000, guid: d50bffcf252f70843bfee805c19364c6, type: 2}

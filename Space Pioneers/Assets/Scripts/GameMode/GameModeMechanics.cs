@@ -56,4 +56,27 @@ public class GameModeMechanics : GameEventListener
             m.enabled = true;
         }
     }
+
+    public bool IsActionMechanic<T>()
+    {
+        return ListHasClass<T>(actionMechanics);
+    }
+
+    public bool IsPlanningMechanic<T>()
+    {
+        return ListHasClass<T>(planningMechanics);
+    }
+
+    private bool ListHasClass<T>(List<MonoBehaviour> list)
+    {
+        foreach(var obj in list)
+        {
+            if(obj is T)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

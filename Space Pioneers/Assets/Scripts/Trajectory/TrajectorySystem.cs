@@ -90,6 +90,8 @@ public class TrajectorySystem : ScriptableObject
                 fakeR.enabled = false;
             }
 
+            GameModeMechanics modeMechanics = fake.GetComponent<GameModeMechanics>();
+
             Frozen fr = fake.GetComponent<Frozen>();
             Velocity vl = fake.GetComponent<Velocity>();
             if(fr != null)
@@ -97,7 +99,18 @@ public class TrajectorySystem : ScriptableObject
                 vl.enabled = true;
                 if(fr.enabled == true)
                 {
-                    fr.enabled = false;
+                    if(modeMechanics != null)
+                    {
+                        if(modeMechanics.IsActionMechanic<Frozen>())
+                        {
+                            fr.enabled = true;
+                        }
+                        else
+                        {
+                            fr.enabled = false;
+                        }
+                    }   
+                    
                     vl.ActualVelocity = gravGameObj.GetComponent<Velocity>().ActualVelocity;
                 }
                 vl.enabled = false;
