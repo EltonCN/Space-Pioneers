@@ -8,6 +8,7 @@ public class PrefabFactory : GameEventListener
     [SerializeField] bool useMousePosition;
     [SerializeField] bool hasCost;
     [SerializeField] FloatVariable creationCost;
+    [SerializeField] ActionSnapshotRS actionSet;
 
     void Start()
     {
@@ -30,6 +31,41 @@ public class PrefabFactory : GameEventListener
 
         GameObject obj = Instantiate(prefab, position, transform.rotation);
         obj.transform.parent = null;
+
+        if(hasCost)
+        {
+            CreateSnapshot snap = new CreateSnapshot(this, obj, creationCost.value);
+            actionSet.Add(snap);
+        }
+    }
+
+    public class CreateSnapshot : ActionSnapshot
+    {
+        PrefabFactory originator;
+        float cost;
+        GameObject createdObject;
+
+        public CreateSnapshot(PrefabFactory originator, GameObject createdObject, float cost = 0)
+        {
+            this.originator = originator;
+            this.cost = cost; 
+            this.createdObject = createdObject;
+        }
+
+        public float getActionCost()
+        {
+            return this.cost;
+        }
+
+        public string getActionMessage()
+        {
+            return "Criar entidade";
+        }
+
+        public void undo()
+        {
+            Destroy(createdObject);   
+        }
     }
 
 }
