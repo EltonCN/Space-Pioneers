@@ -8,6 +8,8 @@ public class DragAndDrop : MonoBehaviour, Draggable
     InputAction drag;
     Draggable currentDragger;
 
+    InputAction.CallbackContext actualContext;    
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -15,17 +17,20 @@ public class DragAndDrop : MonoBehaviour, Draggable
 
         // Registro dos eventos do mouse nesse ciclo
         InputAction click = map.FindAction("Click", true);
-        // O mapa definido em PlayerInput chama os métodos via InputSystem
+        // O mapa definido em PlayerInput chama os mï¿½todos via InputSystem
         click.started += OnClickStarted;
         click.canceled += OnClickCanceled;
 
-        // Parte de detecção do Drag mapeado na PlayerInput
+        // Parte de detecï¿½ï¿½o do Drag mapeado na PlayerInput
         drag = map.FindAction("Drag", true);
+
+        drag.performed += this.OnMouseDrag;
     }
 
     public void OnClickStarted(InputAction.CallbackContext context)
     {
         RaycastHit hit;
+        actualContext = context;
 
         if (Mouse.current.clickCount.ReadValue() == 1)
         {
@@ -36,8 +41,8 @@ public class DragAndDrop : MonoBehaviour, Draggable
                 // Aqui queremos saber se o gameObject encontrado implementa a interface Draggable,
                 if (hit.collider != null)
                 {
-                    // No outro tutorial que vi, foi implementado essa verificação com Tags ao invés
-                    // de Interfaces, assim é melhor e mais robusto, dividimos o comportamento por classes
+                    // No outro tutorial que vi, foi implementado essa verificaï¿½ï¿½o com Tags ao invï¿½s
+                    // de Interfaces, assim ï¿½ melhor e mais robusto, dividimos o comportamento por classes
                     Draggable dragger = hit.collider.gameObject.GetComponent<Draggable>();
                     if (dragger != null) { 
                         currentDragger = dragger; 
@@ -56,8 +61,8 @@ public class DragAndDrop : MonoBehaviour, Draggable
 
     public void OnClickCanceled(InputAction.CallbackContext context)
     {
-        // Quando o botão do mouse é solto, apagamos da lista de EventHandlers drag.performed 
-        // o método OnMouseDrag e chamamos o método que realiza as ações ao soltar o botão do Mouse
+        // Quando o botï¿½o do mouse ï¿½ solto, apagamos da lista de EventHandlers drag.performed 
+        // o mï¿½todo OnMouseDrag e chamamos o mï¿½todo que realiza as aï¿½ï¿½es ao soltar o botï¿½o do Mouse
         
         try {
             drag.performed -= currentDragger.OnMouseDrag;
@@ -65,19 +70,28 @@ public class DragAndDrop : MonoBehaviour, Draggable
         }
         catch (NullReferenceException)
         {
-            // Debug.Log("Não selecionou nada");
+            // Debug.Log("Nï¿½o selecionou nada");
         }
-        // OBSERVAÇÃO: se nenhum OnMouseDrag tiver sido registrado anteriormente, essa operação
-        // não faz anda pois desregistrar um método não registrado como C#Event é Operação Nula
+        // OBSERVAï¿½ï¿½O: se nenhum OnMouseDrag tiver sido registrado anteriormente, essa operaï¿½ï¿½o
+        // nï¿½o faz anda pois desregistrar um mï¿½todo nï¿½o registrado como C#Event ï¿½ Operaï¿½ï¿½o Nula
     }
 
     public void OnMouseDown(InputAction.CallbackContext context) { }
     public void OnMouseDrag(InputAction.CallbackContext context)
     {
-        // Esse método no tutorial que vi é usado para movimentar a camera, por isso esta classe
-        // implementa IMouse. Caso contrário a implementação de draggers mudaria também
-        // Pode servir para movimentar a câmera para melhor posicionar as peças, se necessario
+        // Esse mï¿½todo no tutorial que vi ï¿½ usado para movimentar a camera, por isso esta classe
+        // implementa IMouse. Caso contrï¿½rio a implementaï¿½ï¿½o de draggers mudaria tambï¿½m
+        // Pode servir para movimentar a cï¿½mera para melhor posicionar as peï¿½as, se necessario
 
+        if(currentDragger != null)
+        {
+            if(currentDragger.Cancel())
+            {
+                
+                OnClickCanceled(actualContext);
+                OnClickStarted(actualContext);
+            }
+        }
     }
     public void OnMouseUp(InputAction.CallbackContext context) { }
 
@@ -89,5 +103,10 @@ public class DragAndDrop : MonoBehaviour, Draggable
     public void DeactivateInput()
     {
         playerInput.DeactivateInput();
+    }
+
+    public bool Cancel()
+    {
+        return false;
     }
 }

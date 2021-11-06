@@ -23,7 +23,7 @@ public class PlaceMe : MonoBehaviour, Draggable
 
     public void OnMouseDown(InputAction.CallbackContext context)
     {
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
 
         snapshot = new PlaceMeSnapshot(this, rb.position);
         actionSet.Add(snapshot);
@@ -42,13 +42,18 @@ public class PlaceMe : MonoBehaviour, Draggable
 
     public void OnMouseUp(InputAction.CallbackContext context)
     {
-        rb.isKinematic = false;
+        //rb.isKinematic = false;
         snapshot = null;
     }
 
     private void MoveTo(Vector3 position)
     {
         rb.MovePosition(position);
+    }
+
+    public bool Cancel()
+    {
+        return false;
     }
 
     public class PlaceMeSnapshot : ActionSnapshot
