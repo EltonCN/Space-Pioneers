@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e10db14eba56d45bf42a276461381b, type: 3}
   m_Name: DefaultActionSnapshotSet
   m_EditorClassIdentifier: 
+  ItemCount: 2
+  maxActionCost: {fileID: 11400000, guid: b136ed0e172219c4fa82fb29f1c53578, type: 2}
