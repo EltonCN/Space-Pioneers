@@ -37,8 +37,6 @@ public class GameModeListener : GameEventListener
             }
             cooldown = costToSecond.value*totalCost;
 
-            Debug.Log(totalCost+" "+cooldown);
-
             actionSet.Reset();
 
             globalState.actualGameMode = GameMode.ACTION;
