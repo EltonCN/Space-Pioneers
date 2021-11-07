@@ -35,9 +35,18 @@ public class PlaceMe : MonoBehaviour, Draggable
         mousePos.z = Camera.main.transform.position.y - desiredY;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
 
-        MoveTo(worldPoint);
+        float originalCost = snapshot.Cost;
+        float newCost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
 
-        snapshot.Cost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
+        snapshot.Cost = newCost;
+        if(actionSet.OverMaximumCost())
+        {
+            snapshot.Cost = originalCost;
+        }
+        else
+        {
+            MoveTo(worldPoint);
+        }
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)

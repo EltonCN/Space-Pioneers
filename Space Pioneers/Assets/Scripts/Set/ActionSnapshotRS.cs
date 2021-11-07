@@ -6,6 +6,7 @@ public class ActionSnapshotRS : RuntimeSet<ActionSnapshot>
     float totalCost = 0f;
     float lastTotalCost;
 
+    [Tooltip("Maximum player actions cost.")] [SerializeField] FloatVariable maxActionCost; 
 
     private void ComputeTotalCost()
     {
@@ -14,6 +15,17 @@ public class ActionSnapshotRS : RuntimeSet<ActionSnapshot>
         {
             totalCost += snap.getActionCost();
         }
+    }
+
+    public bool OverMaximumCost()
+    {
+        ComputeTotalCost();
+
+        if(totalCost > maxActionCost.value)
+        {
+            return true;
+        }
+        return false;
     }
 
     public new void Reset()
