@@ -393,6 +393,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: GravityFieldEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 9.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 9.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.68
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -440,6 +452,10 @@ PrefabInstance:
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
       value: Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: range
+      value: 9.68
       objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: showRange
