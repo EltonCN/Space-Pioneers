@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 7
-  showRange: 1
+  showRange: 0
   rangeToFieldScale: 1.3285714
 --- !u!114 &774147704
 MonoBehaviour:

@@ -14,6 +14,7 @@ public abstract class RuntimeSet<T> : ScriptableObject
 {
     public List<T> Items = new List<T>();
     private int itemCount = 0;
+    [SerializeField] bool notResetOnEnable = false;
 
     public void Add(T thing)
     {
@@ -44,5 +45,14 @@ public abstract class RuntimeSet<T> : ScriptableObject
             itemCount = Items.Count;
             return itemCount;
         }
+    }
+
+    public void OnEnable()
+    {
+        if(!notResetOnEnable)
+        {
+            Reset();
+        }
+        
     }
 }
