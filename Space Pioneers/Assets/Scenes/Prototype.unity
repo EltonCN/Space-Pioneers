@@ -389,13 +389,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311191393, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_Name
+      value: GravityFieldEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.59
+      value: -35.42
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.y
@@ -403,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.3
+      value: 31.35
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -437,20 +441,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3352119739594653874, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: actionMechanics.Array.size
-      value: 2
+    - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: showRange
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3352119739594653874, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: actionMechanics.Array.data[1]
-      value: 
-      objectReference: {fileID: 1947884757}
-    - target: {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: globalState
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3562409172953274091, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
 --- !u!1 &1442749381
 GameObject:
@@ -1060,7 +1055,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1212,17 +1207,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &1947884757 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 37411370049452579, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-  m_PrefabInstance: {fileID: 1426663609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &543450651646508227
 Transform:
   m_ObjectHideFlags: 0
@@ -1480,7 +1464,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1838605573, guid: 1a3b861af82f5da4eacad0126a11e2cf, type: 3}
       propertyPath: actualScreenPosition.y
-      value: 94.56303
+      value: 107.79633
       objectReference: {fileID: 0}
     - target: {fileID: 1838605573, guid: 1a3b861af82f5da4eacad0126a11e2cf, type: 3}
       propertyPath: targetScreenPosition.x
