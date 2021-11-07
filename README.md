@@ -17,5 +17,4 @@ Neste jogo, o jogador deve manipular o cenário de cada fase do jogo, colocando 
 - [Elton Cardoso do Nascimento](https://github.com/EltonCN) - IC Unicamp
 - [Maria Eduardo Kawakami Moreira](https://github.com/madukm) - ICMC USP
 - [Pedro Augusto Ribeiro Gomes](https://github.com/pedroaurgomes) - ICMC USP
-- Rafael Kuhn Takano - ICMC USP
 - [Thiago Danilo Silva de Lacerda](https://github.com/ThiagoDSL) - IC Unicamp
