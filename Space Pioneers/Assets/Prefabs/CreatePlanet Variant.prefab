@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311191393, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
-      value: CreatePlanet
+      value: CreatePlanet Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3352119739594653874, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: planningMechanics.Array.size
@@ -130,6 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b5678953f4d2a47a11118f331b18b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetScreenPosition: {x: 0, y: 0, z: 0}
+  actualScreenPosition: {x: 168.81825, y: 101.113976, z: 33.76}
+  updateTarget: 0
 --- !u!114 &1838605575
 MonoBehaviour:
   m_ObjectHideFlags: 0

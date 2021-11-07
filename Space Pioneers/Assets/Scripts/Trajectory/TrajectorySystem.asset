@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c9d6ff40d83e849a61b7503a4dc9f2, type: 3}
   m_Name: TrajectorySystem
   m_EditorClassIdentifier: 
-  computeInterval: 0.1
-  maxIterations: 250
+  computeInterval: 0.5
+  maxIterations: 100
   gravitySet: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   trajectorySet: {fileID: 11400000, guid: d50bffcf252f70843bfee805c19364c6, type: 2}

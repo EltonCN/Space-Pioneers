@@ -30,8 +30,6 @@ public class Gravity : MonoBehaviour
             set.Add(this);
         }
     }
-
-
     void Start()
     {
         ownRb = GetComponent<Rigidbody>();
@@ -104,5 +102,15 @@ public class Gravity : MonoBehaviour
     void OnDestroy()
     {
         set.Remove(this);
+    }
+
+    void OnValidate()
+    {
+        Transform childTransform = transform.Find("GravityFieldEffect");
+        
+        if(childTransform != null)
+        {
+            childTransform.localScale = new Vector3(range, range, range);
+        }
     }
 }
