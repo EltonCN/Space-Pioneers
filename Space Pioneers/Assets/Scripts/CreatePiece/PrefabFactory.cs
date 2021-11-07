@@ -36,6 +36,12 @@ public class PrefabFactory : GameEventListener
         {
             CreateSnapshot snap = new CreateSnapshot(this, obj, creationCost.value);
             actionSet.Add(snap);
+
+            if(actionSet.OverMaximumCost())
+            {
+                snap.undo();
+                actionSet.Remove(snap);
+            }
         }
     }
 
