@@ -50,4 +50,10 @@ public class ActionSnapshotRS : RuntimeSet<ActionSnapshot>
             return lastTotalCost;
         }
     }
+
+    public new void OnEnable()
+    {
+        base.OnEnable();
+        this.lastTotalCost = 0; 
+    }
 }

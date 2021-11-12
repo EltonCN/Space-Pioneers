@@ -22,6 +22,7 @@ public class ActionBar : GameEventListener
 
     void Start()
     {
+        lastChange = Time.time;
         Response.AddListener(this.ToggleGameMode);
     }
 

@@ -104,13 +104,16 @@ public class Gravity : MonoBehaviour
         set.Remove(this);
     }
 
+    [SerializeField] float rangeToFieldScale = 1.3285714285714285714285714285714f;
+
     void OnValidate()
     {
         Transform childTransform = transform.Find("GravityFieldEffect");
         
         if(childTransform != null)
         {
-            childTransform.localScale = new Vector3(range, range, range);
+            float fieldRange = rangeToFieldScale*range;
+            childTransform.localScale = new Vector3(fieldRange, fieldRange, fieldRange);
         }
     }
 }
