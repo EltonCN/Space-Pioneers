@@ -44,8 +44,21 @@ public class DragAndDrop : MonoBehaviour, Draggable
                     // No outro tutorial que vi, foi implementado essa verifica��o com Tags ao inv�s
                     // de Interfaces, assim � melhor e mais robusto, dividimos o comportamento por classes
                     Draggable dragger = hit.collider.gameObject.GetComponent<Draggable>();
-                    if (dragger != null) { 
-                        currentDragger = dragger; 
+                    if (dragger != null) {
+                        if(dragger is MonoBehaviour)
+                        {
+                            MonoBehaviour mb = (MonoBehaviour) dragger;
+
+                            if(mb.enabled == true)
+                            {
+                                currentDragger = dragger; 
+                            }
+                        }
+                        else
+                        {
+                            currentDragger = dragger; 
+                        }
+                        
                     }
                 }
             }
