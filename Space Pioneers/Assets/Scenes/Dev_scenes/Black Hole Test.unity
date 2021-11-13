@@ -723,6 +723,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1688941185829423833, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
       value: Planet
@@ -788,6 +792,22 @@ PrefabInstance:
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 1913713549}
+    - target: {fileID: 6439482179654665772, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179654665774, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179654665774, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179654665774, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
