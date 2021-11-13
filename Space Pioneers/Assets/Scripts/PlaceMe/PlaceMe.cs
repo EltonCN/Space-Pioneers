@@ -7,26 +7,21 @@ public class PlaceMe : MonoBehaviour, Draggable
     [SerializeField] float desiredY = 20;
     [SerializeField] ActionSnapshotRS actionSet;
     [SerializeField] FloatVariable cost;
-
     PlaceMeSnapshot snapshot;
 
-    // Start is called before the first frame update
+    [SerializeField] bool ignoreCollision = false;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-
-    }
 
     public void OnMouseDown(InputAction.CallbackContext context)
     {
-        //rb.isKinematic = true;
-
-        snapshot = new PlaceMeSnapshot(this, rb.position);
-        actionSet.Add(snapshot);
+        
+    snapshot = new PlaceMeSnapshot(this, rb.position);
+    actionSet.Add(snapshot); 
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
@@ -41,11 +36,12 @@ public class PlaceMe : MonoBehaviour, Draggable
         catch(MissingReferenceException)
         {
             return;
-        }   
+        } 
 
         Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = Camera.main.transform.position.y - desiredY;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
+   
 
         float originalCost = snapshot.Cost;
         float newCost = (snapshot.OriginalPosition-worldPoint).magnitude*cost.value;
@@ -57,13 +53,25 @@ public class PlaceMe : MonoBehaviour, Draggable
         }
         else
         {
-            MoveTo(worldPoint);
+            float distance = (worldPoint-rb.position).magnitude;
+
+            RaycastHit hit;
+            Ray ray = new Ray(rb.position, (worldPoint-rb.position));
+
+            if(!Physics.Raycast(ray, out hit, distance) || ignoreCollision)
+            {
+                MoveTo(worldPoint);
+            }
+            else
+            {
+                snapshot.Cost = originalCost;
+            }
+            
         }
     }
 
     public void OnMouseUp(InputAction.CallbackContext context)
     {
-        //rb.isKinematic = false;
         snapshot = null;
     }
 
