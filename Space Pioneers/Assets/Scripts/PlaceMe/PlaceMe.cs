@@ -10,6 +10,7 @@ public class PlaceMe : MonoBehaviour, Draggable
     PlaceMeSnapshot snapshot;
 
     [SerializeField] bool ignoreCollision = false;
+    [SerializeField] float collisionRadious = 0.75f;
 
     void Awake()
     {
@@ -58,7 +59,7 @@ public class PlaceMe : MonoBehaviour, Draggable
             RaycastHit hit;
             Ray ray = new Ray(rb.position, (worldPoint-rb.position));
 
-            if(!Physics.Raycast(ray, out hit, distance) || ignoreCollision)
+            if(!Physics.SphereCast(ray, collisionRadious,  out hit, distance) || ignoreCollision)
             {
                 MoveTo(worldPoint);
             }

@@ -190,9 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22824d16ba6511943b992cf1815c2b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredY: -1.18
+  desiredY: 0
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
   cost: {fileID: 11400000, guid: cc6ad387fc4b3334991d5b59d14e11d8, type: 2}
+  ignoreCollision: 0
 --- !u!114 &3352119739594653874
 MonoBehaviour:
   m_ObjectHideFlags: 0
