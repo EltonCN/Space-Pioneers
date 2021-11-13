@@ -816,6 +816,10 @@ PrefabInstance:
       propertyPath: desiredY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: ignoreCollision
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 1
