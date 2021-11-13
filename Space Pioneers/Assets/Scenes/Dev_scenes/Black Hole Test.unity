@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9990a9f00b110214faee5626bf452c5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 1913713549}
 --- !u!135 &1080330733
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -551,6 +551,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1913713549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6593019015822170023, guid: ab8fcf5650b55274eb5f0dcd15ff7a57, type: 3}
+  m_PrefabInstance: {fileID: 811934588}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1941159325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,27 +791,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f995262d2c6b404ea4832b2c4680ab8, type: 3}
---- !u!1 &2016981617 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
-  m_PrefabInstance: {fileID: 2082142221}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2016981618
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016981617}
-  serializedVersion: 2
-  m_Mass: 0.0000001
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &2066999561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -972,17 +956,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1005717853658511763, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 1005717853658511766, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1913713549}
     - target: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: m_Name
       value: LevelEnd
-      objectReference: {fileID: 0}
-    - target: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}

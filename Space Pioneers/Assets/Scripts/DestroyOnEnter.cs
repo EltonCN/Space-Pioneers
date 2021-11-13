@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class DestroyOnEnter : MonoBehaviour
 {
-    [Tooltip("Object to wait enter in the collider.")] [SerializeField] GameObject targetObject;
-
-
+    [Tooltip("Object to wait enter in the collider. Set to None for destroy everything.")] [SerializeField] GameObject targetObject;
+    
     private GameObject parent;
 
     void Awake()
@@ -33,7 +33,7 @@ public class DestroyOnEnter : MonoBehaviour
         {
             return;
         }
-        
+
 
         if(targetObject == null || other.gameObject == targetObject)
         {

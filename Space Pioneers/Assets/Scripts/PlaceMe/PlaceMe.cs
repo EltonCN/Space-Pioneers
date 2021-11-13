@@ -30,7 +30,19 @@ public class PlaceMe : MonoBehaviour, Draggable
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
-    {   
+    {
+        try
+        {
+            if(this.gameObject == null)
+            {
+                return;
+            }
+        }
+        catch(MissingReferenceException)
+        {
+            return;
+        }   
+
         Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = Camera.main.transform.position.y - desiredY;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
