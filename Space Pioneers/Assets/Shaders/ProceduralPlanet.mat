@@ -74,9 +74,9 @@ Material:
     m_Floats:
     - Boolean_365b84db7c254c678d293a752598a469: 0
     - Vector1_00c04b2c305b488eb9f11c8a8640ec0d: 1
-    - Vector1_2887b05813d74e6f84becc90837cb6ac: 1.86
+    - Vector1_2887b05813d74e6f84becc90837cb6ac: 0.95
     - Vector1_9c32d72ab3144d5ca79885d71602faed: 1
-    - Vector1_d84a1607755b49f9930d8666648fe41a: 0.23
+    - Vector1_d84a1607755b49f9930d8666648fe41a: 0.32
     m_Colors:
     - Vector2_5b76b690857f4e2182e078d74838bd61: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_7a2ba9feec1545d3a2367b80b4597d74: {r: 8, g: 8, b: 0, a: 0}
