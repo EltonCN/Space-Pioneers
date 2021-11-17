@@ -179,6 +179,10 @@ PrefabInstance:
       value: CubeSphere-HighPoly-49K (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3699325879379950085, guid: ea93b5610deba9240b9fdbd3114334f4, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3699325879379950085, guid: ea93b5610deba9240b9fdbd3114334f4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4b079917dc399be40aae7402d92693fa, type: 2}
@@ -937,16 +941,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582066654102459704, guid: e457204769599a54aba265f0809b6014, type: 3}
       propertyPath: m_Name
-      value: "FundoProvis\xF3rio"
+      value: Fundo
       objectReference: {fileID: 0}
-    - target: {fileID: 7582066654102459704, guid: e457204769599a54aba265f0809b6014, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7582066654102459706, guid: e457204769599a54aba265f0809b6014, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8b7e271f6fce8f0448bf9c8a5567b489, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e457204769599a54aba265f0809b6014, type: 3}
 --- !u!1001 &2070348463
@@ -1208,9 +1204,17 @@ PrefabInstance:
       propertyPath: showRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3201548857036983885, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4936928415403551981, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Name
       value: Black hole
+      objectReference: {fileID: 0}
+    - target: {fileID: 4936928415403551981, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5602401540379562713, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_RootOrder
@@ -1256,6 +1260,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6439482179305927191, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179632504451, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6439482179632504453, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: targetObject
       value: 
@@ -1265,8 +1277,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179654665773, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179654665773, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179654665774, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_CastShadows
@@ -1278,7 +1294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179654665774, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_RenderingLayerMask
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179796771860, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Materials.Array.data[0]
