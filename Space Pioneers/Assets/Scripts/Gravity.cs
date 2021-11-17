@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.VFX;
 
 [AddComponentMenu("SpacePioneers/Mechanics/Gravity")]
 [RequireComponent(typeof(Rigidbody))]
@@ -126,5 +127,23 @@ public class Gravity : MonoBehaviour
     public void ToggleDirection()
     {
         this.antiGravity = !this.antiGravity;
+
+        Transform childTransform = transform.Find("GravityParticles");
+
+        VisualEffect vfx = childTransform.GetComponent<VisualEffect>();
+
+        if(vfx != null)
+        {
+            float direction = 1;
+
+            if(this.antiGravity)
+            {
+                direction = -1;
+            }
+            
+            vfx.SetFloat("Attraction", direction);
+        }
+
+        
     }
 }

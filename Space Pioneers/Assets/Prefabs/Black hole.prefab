@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3201548857036983885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 5602401540379562713}
   m_RootOrder: 1
@@ -179,6 +179,7 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 7
   showRange: 1
+  antiGravity: 0
   rangeToFieldScale: 1.3285714
 --- !u!114 &8635860952634217924
 MonoBehaviour:
@@ -420,7 +421,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6439482179654665773}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -428,7 +429,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 729041c0496b39d47a4dc09135f4d151, type: 2}
@@ -493,7 +494,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6439482179796771860}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 9b50f9692a78b1847bba61ce47232b0d, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: 183543d40e75342438e055d079514f1e, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
