@@ -10,6 +10,9 @@ public class Gravity : MonoBehaviour
     [SerializeField] private float range = 10f;
     [SerializeField] private bool showRange = false;
 
+    [SerializeField] private bool antiGravity = false;
+    [SerializeField] float rangeToFieldScale = 1.3285714285714285714285714285714f;
+
     private float gravityConstant  = 6.67408f;
     private bool frozen = false;
 
@@ -81,6 +84,11 @@ public class Gravity : MonoBehaviour
 
                 if (!float.IsNaN(force.x) && !float.IsNaN(force.y) && !float.IsNaN(force.z))
                 {
+                    if(antiGravity)
+                    {
+                        force *= -1;
+                    }
+
                     rb.AddForce(force);
                     rb.transform.rotation = Quaternion.LookRotation(rb.velocity, transform.up);
                 }
@@ -104,8 +112,6 @@ public class Gravity : MonoBehaviour
         set.Remove(this);
     }
 
-    [SerializeField] float rangeToFieldScale = 1.3285714285714285714285714285714f;
-
     void OnValidate()
     {
         Transform childTransform = transform.Find("GravityFieldEffect");
@@ -115,5 +121,10 @@ public class Gravity : MonoBehaviour
             float fieldRange = rangeToFieldScale*range;
             childTransform.localScale = new Vector3(fieldRange, fieldRange, fieldRange);
         }
+    }
+
+    public void ToggleDirection()
+    {
+        this.antiGravity = !this.antiGravity;
     }
 }
