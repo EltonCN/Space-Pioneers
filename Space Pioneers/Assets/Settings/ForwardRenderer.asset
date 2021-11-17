@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Active: 0
   settings:
     passTag: Heat Distortion
-    Event: 400
+    Event: 1000
     filterSettings:
       RenderQueueType: 1
       LayerMask:
