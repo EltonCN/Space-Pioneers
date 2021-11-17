@@ -1,0 +1,52 @@
+{
+    "name": "CameraActions",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "169ce1fd-1734-46c0-8fc6-c460e2e75d58",
+            "actions": [
+                {
+                    "name": "Zoom",
+                    "type": "PassThrough",
+                    "id": "1fad4ec6-11f8-44d0-b3ff-66e00d86937f",
+                    "expectedControlType": "Axis",
+                    "processors": "Normalize(min=-1,max=1)",
+                    "interactions": ""
+                },
+                {
+                    "name": "Pan",
+                    "type": "Value",
+                    "id": "d23fe047-020c-44ec-b282-c25f02bdfb0f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8a585c7c-77e2-46c0-bbe0-f5f024fd1d6a",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6b0139d-1a4b-4aad-b85c-aa2e63a6d202",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pan",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
