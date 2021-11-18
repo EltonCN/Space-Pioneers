@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -181,6 +185,10 @@ PrefabInstance:
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
       value: Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: antiGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
@@ -309,33 +317,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 311191393, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_Name
-      value: GravityFieldEffect
-      objectReference: {fileID: 0}
-    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.642857
-      objectReference: {fileID: 0}
-    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.642857
-      objectReference: {fileID: 0}
-    - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.642857
-      objectReference: {fileID: 0}
-    - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: ignoreCollision
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: collisionRadious
-      value: 0.831897
-      objectReference: {fileID: 0}
     - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
@@ -381,20 +369,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1688941185829423833, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9b8eadc4de0544646b75ddcc43f8fd06, type: 2}
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
       value: Planet (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 4876806796681071968, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_Mass
-      value: 75
-      objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: showRange
+      propertyPath: antiGravity
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -697,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582066654102459700, guid: e457204769599a54aba265f0809b6014, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.81
+      value: -7.3
       objectReference: {fileID: 0}
     - target: {fileID: 7582066654102459700, guid: e457204769599a54aba265f0809b6014, type: 3}
       propertyPath: m_LocalPosition.y
@@ -705,7 +685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7582066654102459700, guid: e457204769599a54aba265f0809b6014, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.8
+      value: 20.5
       objectReference: {fileID: 0}
     - target: {fileID: 7582066654102459700, guid: e457204769599a54aba265f0809b6014, type: 3}
       propertyPath: m_LocalRotation.w

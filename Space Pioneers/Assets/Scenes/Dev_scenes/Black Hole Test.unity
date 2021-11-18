@@ -250,7 +250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: collisionRadious
-      value: 0.915
+      value: 1.248
       objectReference: {fileID: 0}
     - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -306,6 +306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+--- !u!1 &778774636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6593019015822170023, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
+  m_PrefabInstance: {fileID: 171271262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1843293265
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +740,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 838135045, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1036443097849204331, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -893,6 +902,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4936928415403551981, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5602401540379562713, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -948,7 +961,7 @@ PrefabInstance:
     - target: {fileID: 6439482179632504453, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 778774636}
     - target: {fileID: 6439482179654665772, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -976,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 6439482179796771860, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Materials.Array.data[0]
