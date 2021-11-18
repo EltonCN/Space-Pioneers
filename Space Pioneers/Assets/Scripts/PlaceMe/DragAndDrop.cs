@@ -31,7 +31,6 @@ public class DragAndDrop : MonoBehaviour, Draggable
     {
         RaycastHit hit;
         actualContext = context;
-
         if (Mouse.current.clickCount.ReadValue() == 1)
         {
             currentDragger = null;

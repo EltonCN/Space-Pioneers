@@ -20,9 +20,8 @@ public class PlaceMe : MonoBehaviour, Draggable
 
     public void OnMouseDown(InputAction.CallbackContext context)
     {
-        
-    snapshot = new PlaceMeSnapshot(this, rb.position);
-    actionSet.Add(snapshot); 
+        snapshot = new PlaceMeSnapshot(this, rb.position);
+        actionSet.Add(snapshot); 
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)

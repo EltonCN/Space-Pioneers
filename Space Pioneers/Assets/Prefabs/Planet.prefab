@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 3352119739594653874}
   - component: {fileID: 5571241644449324552}
   - component: {fileID: 517985065}
+  - component: {fileID: 3610341300463701902}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -259,7 +260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2152400458543118747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
@@ -364,6 +365,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!135 &3610341300463701902
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2152400458543118747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.831897
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9100472929407212148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +385,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1504792061241214895}
     m_Modifications:
+    - target: {fileID: 6532559885550939219, guid: 17fb9ba5b9809204eb1fe101c101e734, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7296487723940480884, guid: 17fb9ba5b9809204eb1fe101c101e734, type: 3}
       propertyPath: m_Name
       value: Planet core
