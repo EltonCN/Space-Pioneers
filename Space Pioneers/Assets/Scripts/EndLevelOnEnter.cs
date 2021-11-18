@@ -11,6 +11,11 @@ public class EndLevelOnEnter : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
+        if(nextScene == null)
+        {
+            return;
+        }
+
         if(other.gameObject == targetObject)
         {
             SceneManager.LoadScene(nextScene.name);
@@ -19,6 +24,12 @@ public class EndLevelOnEnter : MonoBehaviour
 
     void OnValidate()
     {
+        if(nextScene == null)
+        {
+            Debug.LogWarning("Next scene set to null.");
+            return;
+        }
+
         try
         {
             SceneAsset s = (SceneAsset) nextScene;
