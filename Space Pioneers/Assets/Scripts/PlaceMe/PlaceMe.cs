@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[AddComponentMenu("SpacePioneers/Mechanics/PlaceMe")]
+[RequireComponent(typeof(Collider))]
 public class PlaceMe : MonoBehaviour, Draggable
 {
     Rigidbody rb;
