@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 5d7fcd6446216eb409421d296695f54c, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: a7cb761f92c04254f82be1da9d4fba24, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1687fd59053b8494c88d3045359b2dce, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -254,15 +254,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.3
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.3
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.z
-      value: 9.3
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
@@ -478,13 +478,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856410637}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -7.57, y: 3, z: 0.07}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!4 &543450651646508227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5779467910326619421, guid: ab8fcf5650b55274eb5f0dcd15ff7a57, type: 3}
