@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 6459956083703665259}
   - component: {fileID: 9098019589972240033}
   - component: {fileID: 6532559885550939219}
+  - component: {fileID: 2690266304565734154}
   m_Layer: 0
   m_Name: Planet core
   m_TagString: Untagged
@@ -383,3 +384,21 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.35
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2690266304565734154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296487723940480884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8921f566c8b38d49815c9541e82d80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 20
+  rotationAxis: {x: 0, y: 1, z: 0}
+  randomRotation: 1
+  minRotation: 20
+  maxRotation: 50
+  randomAxis: 1
