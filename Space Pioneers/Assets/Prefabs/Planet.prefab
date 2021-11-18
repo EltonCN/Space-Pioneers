@@ -299,7 +299,7 @@ MonoBehaviour:
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
   cost: {fileID: 11400000, guid: cc6ad387fc4b3334991d5b59d14e11d8, type: 2}
   ignoreCollision: 0
-  collisionRadious: 0.375
+  collisionRadious: 0.831897
 --- !u!114 &3352119739594653874
 MonoBehaviour:
   m_ObjectHideFlags: 0
