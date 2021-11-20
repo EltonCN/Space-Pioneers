@@ -881,10 +881,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -262.0,
+            "x": -239.99998474121095,
             "y": 200.0,
-            "width": 138.0,
-            "height": 77.0
+            "width": 139.1999969482422,
+            "height": 77.60000610351563
         }
     },
     "m_Slots": [
@@ -2570,7 +2570,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Alpha",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.5,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }

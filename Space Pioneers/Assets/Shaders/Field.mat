@@ -10,7 +10,7 @@ Material:
   m_Name: Field
   m_Shader: {fileID: -6465566751694194690, guid: 850e634783505874ca603bf9ac96197a, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_7a57e4d8dda54e6cac9eabcc743ae677:
-        m_Texture: {fileID: 2800000, guid: 7689be2c0e5c95e4ebfd1a97edf9091b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,6 +42,6 @@ Material:
     - Vector1_d075ae69dd0b4a89acc5518a53699056: 0.05
     - Vector1_ecae15c090814e48aff9f9accc8a18db: 0
     m_Colors:
-    - Color_62fe1870a7ac4de693e71ff761da1ebb: {r: 0, g: 1.9496275, b: 3.2335286, a: 0}
+    - Color_62fe1870a7ac4de693e71ff761da1ebb: {r: 0, g: 2.9559617, b: 4.867144, a: 0}
     - Vector2_a2d039890d064fd1bf101763076bcfec: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []

@@ -122,13 +122,18 @@ public class Gravity : MonoBehaviour
             float fieldRange = rangeToFieldScale*range;
             childTransform.localScale = new Vector3(fieldRange, fieldRange, fieldRange);
         }
+
+        updateParticles();
     }
 
-    public void ToggleDirection()
+    void updateParticles()
     {
-        this.antiGravity = !this.antiGravity;
-
         Transform childTransform = transform.Find("GravityParticles");
+
+        if(childTransform == null)
+        {
+            return;
+        }
 
         VisualEffect vfx = childTransform.GetComponent<VisualEffect>();
 
@@ -143,6 +148,13 @@ public class Gravity : MonoBehaviour
             
             vfx.SetFloat("Attraction", direction);
         }
+    }
+
+    public void ToggleDirection()
+    {
+        this.antiGravity = !this.antiGravity;
+
+        updateParticles();
 
         
     }

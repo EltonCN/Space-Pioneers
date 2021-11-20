@@ -11,21 +11,33 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2119089122, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -52.28
+      value: -37.25
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.79
+      value: 30.56
       objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
-      value: CreatePlanet Variant
+      value: CreatePlanet
       objectReference: {fileID: 0}
     - target: {fileID: 3352119739594653874, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: planningMechanics.Array.size
@@ -134,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b5678953f4d2a47a11118f331b18b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScreenPosition: {x: 0, y: 0, z: 0}
-  actualScreenPosition: {x: 168.81825, y: 101.113976, z: 33.76}
+  targetScreenPosition: {x: 159.29283, y: 283.35184, z: 33.76}
+  actualScreenPosition: {x: 249.47777, y: 312.25858, z: 38.04508}
   updateTarget: 0
 --- !u!114 &1838605575
 MonoBehaviour:
