@@ -130,29 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1489906728040241051, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1489906728040241051, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3448787418643701263, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3448787418643701263, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5779467910326619421, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_RootOrder
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5779467910326619421, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5779467910326619421, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -193,14 +173,6 @@ PrefabInstance:
     - target: {fileID: 5779467910326619421, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6322616326689171167, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6593019015822170021, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: planningMechanics.Array.size
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6593019015822170023, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_Name
@@ -355,40 +327,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6593019015822170023, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
   m_PrefabInstance: {fileID: 171271262}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &778774647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778774636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: edb8e605550316b43b09eacd22e74e0a, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f75b077e-4224-4e0f-bf68-74fdb5070f44
-    m_ActionName: Abilities/Dash[/Keyboard/space]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Abilities
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1843293265
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,11 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6171476851452262784, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.4176
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 6171476851452262784, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 16.16
       objectReference: {fileID: 0}
     - target: {fileID: 6171476851452262784, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1112,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936928415403551981, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5602401540379562713, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_RootOrder
@@ -1236,7 +1174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6439482179796771862, guid: a6c6e655cc2ca4d4bb51a386ccc8c715, type: 3}
       propertyPath: m_Materials.Array.data[0]
