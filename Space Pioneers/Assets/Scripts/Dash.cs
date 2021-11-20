@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Dash : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Dash : MonoBehaviour
     ParticleSystem flames1;
     public GameObject BigFlame2;
     ParticleSystem flames2;
+    private PlayerInput playerInput;
+    InputAction dash;
 
     // Start is called before the first frame update
     void Start()
@@ -18,24 +21,13 @@ public class Dash : MonoBehaviour
         rig = GetComponent<Rigidbody>();
         flames1 = BigFlame1.GetComponent<ParticleSystem>();
         flames2 = BigFlame2.GetComponent<ParticleSystem>();
+        playerInput = GetComponent<PlayerInput>();
+        InputActionMap map = playerInput.currentActionMap;
+        dash = map.FindAction("Dash", true);
+        dash.performed += Dashing;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))
-            isDashing = true;   
-    
-    }
-
-    private void FixedUpdate() 
-    {
-        if (isDashing)
-            Dashing();
-    
-    }
-
-    private void Dashing() 
+    private void Dashing(InputAction.CallbackContext context) 
     {
         flames1.Play();
         flames2.Play();
