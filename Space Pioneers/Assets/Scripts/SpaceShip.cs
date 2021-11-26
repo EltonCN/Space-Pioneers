@@ -7,14 +7,58 @@ public class SpaceShip : MonoBehaviour
 {
     private Scene scene;
 
+    public GameObject explosion;
+    private ParticleSystem boom;
+    bool exploded; // variável de controle para garantir que a nave só vai explodir uma vez
+
+    public GameObject spaceShipModel;
+    private MeshRenderer spaceShipMesh;
+
+    public GameObject smallFlame1;
+    public GameObject smallFlame2;
+    private ParticleSystem flames1;
+    private ParticleSystem flames2;
+
+    public GameObject levelEnd;
+
     // Start is called before the first frame update
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+
+        boom = explosion.GetComponent<ParticleSystem>();
+        spaceShipMesh = spaceShipModel.GetComponent<MeshRenderer>();
+        flames1 = smallFlame1.GetComponent<ParticleSystem>();
+        flames2 = smallFlame2.GetComponent<ParticleSystem>();
+
+        spaceShipMesh.enabled = true;
+
+        exploded = false;
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other)
     {
-        //SceneManager.LoadScene(scene.name);
+        // Se colidir com o objetivo/final da fase, não explode
+        if (other.gameObject == levelEnd)
+            return;
+
+        if (!exploded)
+        { 
+            boom.Play();
+            exploded = true;
+            flames1.Stop();
+            flames2.Stop();
+            spaceShipMesh.enabled = false;
+            StartCoroutine(GameOver());
+        }
+
+      
     }
+
+    IEnumerator GameOver() 
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(scene.name);
+    }
+
 }
