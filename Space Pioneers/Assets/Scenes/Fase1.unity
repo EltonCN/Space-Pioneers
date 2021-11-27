@@ -325,26 +325,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Name
-      value: Kill Radius
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2119089125, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Overridden
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -392,10 +372,6 @@ PrefabInstance:
     - target: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Name
       value: Planet (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
-      propertyPath: antiGravity
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
