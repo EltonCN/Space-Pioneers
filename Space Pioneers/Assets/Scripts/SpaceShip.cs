@@ -49,6 +49,7 @@ public class SpaceShip : MonoBehaviour
 
         if (!exploded)
         { 
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             boom.Play();
             exploded = true;
             flames1.Stop();
