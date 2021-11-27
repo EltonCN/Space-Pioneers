@@ -782,10 +782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CreatePlanet
       objectReference: {fileID: 0}
-    - target: {fileID: 632208589486314769, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3947701300318543328, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
       propertyPath: m_RootOrder
       value: 6
