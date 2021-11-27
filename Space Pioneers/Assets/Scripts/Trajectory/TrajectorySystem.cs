@@ -9,6 +9,7 @@ public class TrajectorySystem : ScriptableObject
 {
     [SerializeField] float computeInterval = 1f;
     [SerializeField] private int maxIterations = 10;
+    [SerializeField] float deltaTFactor = 1f;
 
     [SerializeField] GravityRS gravitySet;
     [SerializeField] TrajectoryRS trajectorySet;
@@ -160,6 +161,7 @@ public class TrajectorySystem : ScriptableObject
 
 
             simulationPhysicsScene.Simulate(Time.fixedDeltaTime);
+            simulationPhysicsScene.Simulate(Time.fixedDeltaTime*deltaTFactor);
 
             foreach(GameObject go in fakeWithTrajectory)
             {
