@@ -21,7 +21,7 @@ public class ActionSnapshotRS : RuntimeSet<ActionSnapshot>
     {
         ComputeTotalCost();
 
-        if(totalCost > maxActionCost.value)
+        if(totalCost >= maxActionCost.value)
         {
             return true;
         }

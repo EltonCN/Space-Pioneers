@@ -14,6 +14,7 @@ public class PlaceMe : MonoBehaviour, Draggable
     [SerializeField] bool ignoreCollision = false;
     [SerializeField] float collisionRadious = 0.75f;
 
+    RigidbodyConstraints constraints;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,6 +25,19 @@ public class PlaceMe : MonoBehaviour, Draggable
     {
         snapshot = new PlaceMeSnapshot(this, rb.position);
         actionSet.Add(snapshot); 
+
+        constraints = rb.constraints;
+
+        if(actionSet.OverMaximumCost())
+        {
+            actionSet.Remove(snapshot);
+            snapshot = null;
+        }
+        else
+        {
+            
+            rb.constraints = RigidbodyConstraints.None;
+        }
     }
 
     public void OnMouseDrag(InputAction.CallbackContext context)
@@ -39,6 +53,11 @@ public class PlaceMe : MonoBehaviour, Draggable
         {
             return;
         } 
+
+        if(snapshot == null)
+        {
+            return;
+        }
 
         Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = Camera.main.transform.position.y - desiredY;
@@ -75,10 +94,14 @@ public class PlaceMe : MonoBehaviour, Draggable
     public void OnMouseUp(InputAction.CallbackContext context)
     {
         snapshot = null;
+        rb.constraints = constraints;
     }
 
     private void MoveTo(Vector3 position)
     {
+        Debug.Log(position);
+
+        
         rb.MovePosition(position);
     }
 

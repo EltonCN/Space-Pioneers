@@ -13,7 +13,7 @@ using UnityEngine;
 public abstract class RuntimeSet<T> : ScriptableObject
 {
     public List<T> Items = new List<T>();
-    private int itemCount = 0;
+    [Tooltip("Do not modify in the inspector.")][SerializeField] int itemCount = 0;
     [SerializeField] bool notResetOnEnable = false;
 
     public void Add(T thing)
