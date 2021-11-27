@@ -21,6 +21,11 @@ public class PlaceMe : MonoBehaviour, Draggable
     }
 
 
+    void Start()
+    {
+        
+    }
+
     public void OnMouseDown(InputAction.CallbackContext context)
     {
         snapshot = new PlaceMeSnapshot(this, rb.position);
@@ -98,10 +103,7 @@ public class PlaceMe : MonoBehaviour, Draggable
     }
 
     private void MoveTo(Vector3 position)
-    {
-        Debug.Log(position);
-
-        
+    {   
         rb.MovePosition(position);
     }
 
