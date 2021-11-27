@@ -7,7 +7,6 @@ public class Dash : MonoBehaviour
 {
     public float dashSpeed;
     Rigidbody rig;
-    bool isDashing;
     public GameObject BigFlame1;
     ParticleSystem flames1;
     public GameObject BigFlame2;
@@ -32,6 +31,5 @@ public class Dash : MonoBehaviour
         flames1.Play();
         flames2.Play();
         rig.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
-        isDashing = false;
     }
 }
