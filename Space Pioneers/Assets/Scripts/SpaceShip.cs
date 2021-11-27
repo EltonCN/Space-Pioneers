@@ -9,7 +9,7 @@ public class SpaceShip : MonoBehaviour
 
     public GameObject explosion;
     private ParticleSystem boom;
-    bool exploded; // variável de controle para garantir que a nave só vai explodir uma vez
+    bool exploded; // variï¿½vel de controle para garantir que a nave sï¿½ vai explodir uma vez
 
     public GameObject spaceShipModel;
     private MeshRenderer spaceShipMesh;
@@ -38,9 +38,14 @@ public class SpaceShip : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        // Se colidir com o objetivo/final da fase, não explode
+        // Se colidir com o objetivo/final da fase, nÃ£o explode
         if (other.gameObject == levelEnd)
             return;
+
+        if(boom == null)
+        {
+            return;
+        }
 
         if (!exploded)
         { 
