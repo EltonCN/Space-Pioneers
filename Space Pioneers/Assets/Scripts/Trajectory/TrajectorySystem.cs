@@ -20,7 +20,13 @@ public class TrajectorySystem : ScriptableObject
     PhysicsScene simulationPhysicsScene;
     
     Dictionary<TrajectoryPreview, Vector3[]> trajectorysPositions;
-    List<GameObject> fakes = new List<GameObject>();
+    Dictionary<GameObject, GameObject> fakeRealMap;
+    Dictionary<GameObject, GameObject> realFakeMap;
+    Dictionary<GameObject, TrajectoryPreview> fakePreviewMap;
+    List<GameObject> fakes;
+
+    GravityRS gravRS;
+    TrajectoryRS trajRS;
 
     public Vector3[] getPositions(TrajectoryPreview tp)
     {
@@ -40,6 +46,8 @@ public class TrajectorySystem : ScriptableObject
             
         }
 
+        Debug.Log(tp.name);
+
         return trajectorysPositions[tp];
     }
 
@@ -49,6 +57,27 @@ public class TrajectorySystem : ScriptableObject
             Destroy(go);
         }
         fakes.Clear();
+        fakePreviewMap.Clear();
+        fakeRealMap.Clear();
+        realFakeMap.Clear();
+
+        Debug.LogWarning("Cleaning fakes list and maps");
+    }
+
+    void destroyWithoutReference()
+    {
+        foreach(GameObject fake in fakes)
+        {
+            if(fake == null || fakeRealMap[fake] == null)
+            {
+                fakes.Remove(fake);
+                fakeRealMap.Remove(fake);
+                realFakeMap.Remove(fakeRealMap[fake]);
+                fakePreviewMap.Remove(fake);
+
+                Destroy(fake);
+            }
+        }
     }
 
     void Compute()
@@ -65,39 +94,57 @@ public class TrajectorySystem : ScriptableObject
             trajectorysPositions.Add(tp, new Vector3[maxIterations]);
         }
         
-        Dictionary<GameObject, TrajectoryPreview> fakeRealMap = new Dictionary<GameObject, TrajectoryPreview>();
-
         GameObject[] fakeWithTrajectory = new GameObject[trajectorySet.Items.Count];
         int index = 0;
-
-        GravityRS gravRS = ScriptableObject.CreateInstance<GravityRS>();
-        TrajectoryRS trajRS = ScriptableObject.CreateInstance<TrajectoryRS>();
 
         foreach(Gravity grav in gravitySet.Items.ToArray())
         {
             GameObject gravGameObj = grav.gameObject;
+            GameObject fake;
 
-            GameObject fake = Instantiate(gravGameObj);
+            if(realFakeMap.ContainsKey(gravGameObj))
+            {
+                fake = realFakeMap[gravGameObj];
+            }
+            else
+            {
+                fake = Instantiate(gravGameObj);
+                
+                fake.layer = 8;
+                fakeRealMap.Add(fake, gravGameObj);
+                realFakeMap.Add(gravGameObj, fake);
+                fakes.Add(fake);
+                SceneManager.MoveGameObjectToScene(fake, simulationScene);
+
+                Renderer[] fakeRs = fake.GetComponentsInChildren<Renderer>();
+                foreach(Renderer r in fakeRs)
+                {
+                    if(r != null)
+                    {
+                        r.enabled = false;
+                    }
+                }
+
+                Gravity fakeGrav = fake.GetComponent<Gravity>();
+                fakeGrav.GravityRS = gravRS;
+                fakeGrav.enabled = true;
+
+                SpaceShip spaceShip = fake.GetComponent<SpaceShip>();
+                if(spaceShip != null)
+                {
+                    spaceShip.enabled = false;
+                }
+
+
+            }
+
             fake.transform.position = gravGameObj.transform.position;
             fake.transform.rotation = gravGameObj.transform.rotation;
 
-
-            Gravity fakeGrav = fake.GetComponent<Gravity>();
-            fakeGrav.GravityRS = gravRS;
-            fakeGrav.enabled = true;
-
-            Renderer fakeR = fake.GetComponent<Renderer>();
-            if(fakeR){
-                fakeR.enabled = false;
-            }
-
             GameModeMechanics modeMechanics = fake.GetComponent<GameModeMechanics>();
-
             Frozen fr = fake.GetComponent<Frozen>();
-            Velocity vl = fake.GetComponent<Velocity>();
             if(fr != null)
             {
-                vl.enabled = true;
                 if(fr.enabled == true)
                 {
                     if(modeMechanics != null)
@@ -110,15 +157,25 @@ public class TrajectorySystem : ScriptableObject
                         {
                             fr.enabled = false;
                         }
-                    }   
-                    
-                    vl.ActualVelocity = gravGameObj.GetComponent<Velocity>().ActualVelocity;
+                    }      
                 }
+            }
+
+            if(modeMechanics != null)
+            {
+                modeMechanics.enabled = false;
+            }
+
+            Velocity vl = fake.GetComponent<Velocity>();
+            if(vl != null)
+            {
+                vl.enabled = true;
+                vl.ActualVelocity = gravGameObj.GetComponent<Velocity>().ActualVelocity;
                 vl.enabled = false;
             }
 
-            TrajectoryPreview fakeTraj = fake.GetComponent<TrajectoryPreview>();
             
+            TrajectoryPreview fakeTraj = fake.GetComponent<TrajectoryPreview>();
             if(fakeTraj != null)    
             {
                 TrajectoryRS originalSet = fakeTraj.trajectorySet;
@@ -138,12 +195,13 @@ public class TrajectorySystem : ScriptableObject
                     fakeWithTrajectory[index] = fake;
                     index += 1;
 
-                    fakeRealMap.Add(fake, tp);
+                    if(!fakePreviewMap.ContainsKey(fake))
+                    {
+                        fakePreviewMap.Add(fake, tp);
+                    }
+                    
                 }
             }
-
-            fakes.Add(fake);
-            SceneManager.MoveGameObjectToScene(fake, simulationScene);
         }
 
         Physics.autoSimulation = false;
@@ -160,7 +218,6 @@ public class TrajectorySystem : ScriptableObject
             }
 
 
-            simulationPhysicsScene.Simulate(Time.fixedDeltaTime);
             simulationPhysicsScene.Simulate(Time.fixedDeltaTime*deltaTFactor);
 
             foreach(GameObject go in fakeWithTrajectory)
@@ -170,18 +227,21 @@ public class TrajectorySystem : ScriptableObject
                                                 go.transform.position.y, 
                                                 go.transform.position.z);
 
-                
-
-                TrajectoryPreview realTP = fakeRealMap[go];
+                TrajectoryPreview realTP = fakePreviewMap[go];
                 trajectorysPositions[realTP][i] = position;
-                
+
+                Debug.Log(realTP.name);
             }
 
         }
         Physics.autoSimulation = true;
-
         lastComputeTime = Time.time;
-        destroyAll();
+
+        destroyWithoutReference();
+        if(fakes.Count > 100)
+        {
+            destroyAll();
+        }
     }
 
     void Start()
@@ -198,6 +258,13 @@ public class TrajectorySystem : ScriptableObject
 
         simulationScene = SceneManager.CreateScene(scene_name, param);
         simulationPhysicsScene = simulationScene.GetPhysicsScene();
+
+        fakeRealMap = new Dictionary<GameObject, GameObject>();
+        fakePreviewMap = new Dictionary<GameObject, TrajectoryPreview>();
+        realFakeMap = new Dictionary<GameObject, GameObject>();
+        fakes = new List<GameObject>();
+        gravRS = ScriptableObject.CreateInstance<GravityRS>();
+        trajRS = ScriptableObject.CreateInstance<TrajectoryRS>();
 
     }
 
