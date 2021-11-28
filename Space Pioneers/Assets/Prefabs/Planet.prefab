@@ -133,7 +133,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Atraction
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: -1
         m_Name: Attraction
         m_Overridden: 1
     m_Vector2f:
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2152400458543118747}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10df855af492c7d44b0d03c8c83a7847, type: 3}
   m_Name: 
@@ -281,7 +281,7 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 5
   showRange: 0
-  antiGravity: 0
+  antiGravity: 1
   rangeToFieldScale: 1.3285714
 --- !u!114 &774147704
 MonoBehaviour:

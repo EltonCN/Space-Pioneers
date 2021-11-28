@@ -67,8 +67,11 @@ public class Gravity : MonoBehaviour
         List<Rigidbody> rbs = new List<Rigidbody>();
         foreach(Gravity g in set.Items)
         {
+            if (g.enabled == false) {
+                continue;
+            }
             Rigidbody rb = g.GetComponent<Rigidbody>();
-
+            
             if (rb != null && rb != ownRb && !rbs.Contains(rb))
             {
                 rbs.Add(rb);
