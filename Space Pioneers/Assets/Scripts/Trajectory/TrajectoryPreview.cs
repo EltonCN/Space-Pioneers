@@ -10,7 +10,7 @@ public class TrajectoryPreview : MonoBehaviour
     
     LineRenderer lineRenderer;
 
-    void Start()
+    void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.04f;

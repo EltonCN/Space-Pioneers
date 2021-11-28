@@ -12,17 +12,36 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Intangibility",
+                    "type": "Button",
+                    "id": "8d4acf81-bc2a-465e-abe4-04cf05e9d525",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "4d29fb63-8ad4-473b-bbaf-815130810315",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15f4fe77-e36e-44ec-a4a2-37fb2c2544dd",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Intangibility",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
