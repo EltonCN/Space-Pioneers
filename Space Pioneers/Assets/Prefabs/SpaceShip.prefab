@@ -75,9 +75,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29cb8d54e11c44b9a31231830d2f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 0
-  globalState: {fileID: 0}
-  parentGameObject: {fileID: 0}
+  gameMode: 1
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
+  parentGameObject: {fileID: 1703401317}
   ability: {fileID: 11400000, guid: d2b1bd328ea4dbf42afc4affe788fd41, type: 2}
   playerInput: {fileID: 778774647}
   inputActionName: Intangibility
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29cb8d54e11c44b9a31231830d2f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 0
-  globalState: {fileID: 0}
+  gameMode: 1
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   parentGameObject: {fileID: 7674844519087902385}
   ability: {fileID: 11400000, guid: 3a761d41caca8c34c9361179a1780896, type: 2}
   playerInput: {fileID: 778774647}
