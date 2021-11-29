@@ -71,6 +71,17 @@ public class Save : ScriptableObject
         return save;
     }
 
+    public static void delete(int index)
+    {
+        string file_path = get_file_path(index);
+
+        if(File.Exists(file_path))
+        {
+            File.Delete(file_path);
+        }
+
+    }
+
     public void save()
     {
         string json = JsonUtility.ToJson(this);

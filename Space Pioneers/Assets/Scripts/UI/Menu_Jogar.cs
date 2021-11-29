@@ -17,9 +17,11 @@ public class Menu_Jogar : MonoBehaviour
         StartCoroutine("PlaySequence");
     }
 
-    void Start()
+    void OnEnable()
     {
         end_player.Prepare();
+        start_player.playbackSpeed = 1;
+        end_player.playbackSpeed = 5;
     }
 
     IEnumerator PlaySequence()
