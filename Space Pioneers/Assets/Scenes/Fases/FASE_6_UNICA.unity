@@ -971,10 +971,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1005717853658511766, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
-      propertyPath: nextScene
-      value: 
-      objectReference: {fileID: 102900000, guid: 2a589784cced8c34d96caf7673f692d7, type: 3}
-    - target: {fileID: 1005717853658511766, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: targetObject
       value: 
       objectReference: {fileID: 953482426}
