@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: SaveManager
   m_EditorClassIdentifier: 
   currentSave: 0
-  saves: []
+  saves:
+  - {fileID: 11400000, guid: 327a3867df6ad104f9b718ff7f800d7d, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}

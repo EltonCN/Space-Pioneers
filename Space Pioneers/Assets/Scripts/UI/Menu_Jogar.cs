@@ -5,8 +5,8 @@ using UnityEngine.Video;
 
 public class Menu_Jogar : MonoBehaviour
 {
-    [SerializeField] Canvas canvas;
-    [SerializeField] Canvas next_canvas;
+    [SerializeField] GameObject canvas;
+    [SerializeField] GameObject next_canvas;
     
     [SerializeField] VideoPlayer start_player;
     [SerializeField] VideoPlayer end_player;
@@ -42,8 +42,8 @@ public class Menu_Jogar : MonoBehaviour
             yield return null;
         }
 
-        canvas.enabled = false;
-        next_canvas.enabled = true;
+        canvas.SetActive(false);
+        next_canvas.SetActive(true);
 
     }
 }

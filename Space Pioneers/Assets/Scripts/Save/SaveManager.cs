@@ -6,9 +6,12 @@ public class SaveManager : ScriptableObject
     [SerializeField] int currentSave;
     [SerializeField] Save[] saves;
 
-    public Save GetSave()
+    public Save Save
     {
-        return saves[currentSave];
+        get
+        {
+            return saves[currentSave];
+        }
     }
 
     public void changeCurrentSave(int save_index)

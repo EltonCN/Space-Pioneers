@@ -5,7 +5,7 @@ using System.IO;
 [CreateAssetMenu(menuName ="Space Pioneers/Save/Save")]
 public class Save : ScriptableObject
 {
-    public float last_played_level;
+    public int last_played_level;
     [SerializeField] private int index;
 
     public float Index
