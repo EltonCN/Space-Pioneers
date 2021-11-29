@@ -26,7 +26,7 @@ public class Save : ScriptableObject
         #else
         path = Application.persistentDataPath;
         #endif
-        
+ 
         Directory.CreateDirectory(path);
 
         string filename = "save_file_"+index.ToString();
