@@ -14,6 +14,18 @@ public class SaveManager : ScriptableObject
         }
     }
 
+    public int CurrentSave
+    {
+        get
+        {
+            return currentSave;
+        }
+        set
+        {
+            changeCurrentSave(value);
+        }
+    }
+
     public void changeCurrentSave(int save_index)
     {
         if(save_index >= saves.Length || save_index < 0)
@@ -54,5 +66,10 @@ public class SaveManager : ScriptableObject
         {
             Save.delete(i);
         }
+    }
+
+    public void delete(int index)
+    {
+        Save.delete(index);
     }
 }
