@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a2b536a458153488c81aeb10d2f70a, type: 3}
   m_Name: Save0
   m_EditorClassIdentifier: 
-  last_played_level: 0
+  last_played_level: 1
   index: 0

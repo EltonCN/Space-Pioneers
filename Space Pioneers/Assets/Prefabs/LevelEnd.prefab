@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123476d560f59f348878469bdab9aa02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 102900000, guid: 78fc45dfafb095c4f80109057aeb54a5, type: 3}
   targetObject: {fileID: 0}
+  saveManager: {fileID: 11400000, guid: 049d360d519503249bf604cfea6aa877, type: 2}
 --- !u!54 &2016981618
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.IO;
+using System;
 
 [System.Serializable]
 [CreateAssetMenu(menuName ="Space Pioneers/Save/Save")]
 public class Save : ScriptableObject
 {
-    public int last_played_level;
+    public int last_played_level = 0;
     [SerializeField] private int index;
 
     public float Index
@@ -47,7 +48,9 @@ public class Save : ScriptableObject
                 using(StreamReader streamReader = File.OpenText(file_path))
                 {
                     string json = streamReader.ReadToEnd();
-                    save = JsonUtility.FromJson<Save>(json);
+                    
+                    save = ScriptableObject.CreateInstance<Save>();
+                    JsonUtility.FromJsonOverwrite(json, save);
 
                     streamReader.Close();
                 }
@@ -64,7 +67,8 @@ public class Save : ScriptableObject
 
         if(save == null)
         {
-            save = new Save();
+            Debug.Log("Criando novo save");
+            save =  ScriptableObject.CreateInstance<Save>();
             save.index = index;
         }
 

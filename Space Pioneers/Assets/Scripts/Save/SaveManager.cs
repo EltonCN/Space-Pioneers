@@ -23,16 +23,36 @@ public class SaveManager : ScriptableObject
         }
 
         save();
-        if(saves[save_index] == null)
-        {
-            saves[save_index] = Save.Load(save_index);
-        }
-
         currentSave = save_index;
+        load();
     }
 
     public void save()
     {
         saves[currentSave].save();
+    }
+
+    public void load()
+    {
+        saves[currentSave] = Save.Load(currentSave);
+    }
+
+    public void saveAll()
+    {
+        for(int i = 0; i<saves.Length; i++)
+        {
+            if(saves[i] != null)
+            {
+                saves[i].save();
+            }
+        }
+    }
+
+    public void deleteAll()
+    {
+        for(int i = 0; i<saves.Length; i++)
+        {
+            Save.delete(i);
+        }
     }
 }

@@ -5,41 +5,22 @@ using System;
 
 public class EndLevelOnEnter : MonoBehaviour
 {
-    [Tooltip("Scene to go on object enter.")] [SerializeField] UnityEngine.Object nextScene;
     [Tooltip("Object to wait enter in the collider.")] [SerializeField] GameObject targetObject;
+
+    [Tooltip("Game save manager.")][SerializeField] SaveManager saveManager; 
 
 
     private void OnCollisionEnter(Collision other) 
     {
-        if(nextScene == null)
-        {
-            return;
-        }
-
         if(other.gameObject == targetObject)
         {
-            SceneManager.LoadScene(nextScene.name);
-        }
-    }
+            if(saveManager.Save.last_played_level < SceneManager.GetActiveScene().buildIndex)
+            {
+                saveManager.Save.last_played_level = SceneManager.GetActiveScene().buildIndex;
+            }
 
-    void OnValidate()
-    {
-        if(nextScene == null)
-        {
-            Debug.LogWarning("Next scene set to null.");
-            return;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
-
-        try
-        {
-            SceneAsset s = (SceneAsset) nextScene;
-        }
-        catch(InvalidCastException)
-        {
-            Debug.LogError("The next scene must be an Unity Scene asset.");
-            nextScene = null;
-        }
-        
     }
         
 }
