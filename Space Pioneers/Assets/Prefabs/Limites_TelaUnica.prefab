@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5312302226012967369}
   - component: {fileID: 5312302226012967374}
   - component: {fileID: 5312302226012967375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5312302226436151746}
   - component: {fileID: 5312302226436151747}
   - component: {fileID: 5312302226436151744}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5312302226692761265}
   - component: {fileID: 5312302226692761270}
   - component: {fileID: 5312302226692761271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 5312302227007266827}
   - component: {fileID: 5312302227007266824}
   - component: {fileID: 5312302227007266825}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 305279300355109032}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Limites_TelaUnica
   m_TagString: Untagged
   m_Icon: {fileID: 0}

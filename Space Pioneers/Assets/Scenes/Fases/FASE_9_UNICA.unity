@@ -270,6 +270,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1116185525, guid: e604091032374f74cbf8bd317e988453, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13.29
+      objectReference: {fileID: 0}
     - target: {fileID: 1116185526, guid: e604091032374f74cbf8bd317e988453, type: 3}
       propertyPath: levelEnd
       value: 
