@@ -98,7 +98,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -259,6 +259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3476407505762299069}
   - component: {fileID: 3476407505762299068}
+  - component: {fileID: 482148089}
   m_Layer: 5
   m_Name: UIManager
   m_TagString: Untagged
@@ -300,6 +301,30 @@ MonoBehaviour:
   playPauseButton: {fileID: 6523759730713023097}
   playButtonSprite: {fileID: 519803772750173402, guid: 4e029b12c4169e44eb3c55cd1b8160f2, type: 3}
   pauseButtonSprite: {fileID: -3345050207883599867, guid: 4e029b12c4169e44eb3c55cd1b8160f2, type: 3}
+--- !u!114 &482148089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476407505762299042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36153a1ad38508c4b9aa1832fa99a84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls: []
+  actionButtons:
+  - {fileID: 3476407506535330744}
+  - {fileID: 3476407506322661148}
+  - {fileID: 3476407506944706744}
+  planningButtons:
+  - {fileID: 5557601947891163049}
+  - {fileID: 6523759731558185782}
+  globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
 --- !u!1 &3476407505768491097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,7 +1128,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1

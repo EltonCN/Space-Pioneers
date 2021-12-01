@@ -47,6 +47,7 @@ MonoBehaviour:
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   parentGameObject: {fileID: 7251114045490877720}
   ability: {fileID: 11400000, guid: 3a761d41caca8c34c9361179a1780896, type: 2}
+  buttonUI: {fileID: 0}
   playerInput: {fileID: 7437448698058891646}
   inputActionName: Dash
 --- !u!1 &2386173324208643354
@@ -128,7 +129,8 @@ MonoBehaviour:
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   parentGameObject: {fileID: 5571721380028912126}
   ability: {fileID: 11400000, guid: d2b1bd328ea4dbf42afc4affe788fd41, type: 2}
-  playerInput: {fileID: 0}
+  buttonUI: {fileID: 0}
+  playerInput: {fileID: 7437448698058891646}
   inputActionName: Intangibility
 --- !u!1 &5571721380028912126
 GameObject:
@@ -177,7 +179,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5571721380028912126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -189,7 +191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0bee5247432cf8c45804e229cfa2544a, type: 2}
+  - {fileID: 2100000, guid: 244d0e740dc949842aec046bb3861796, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
