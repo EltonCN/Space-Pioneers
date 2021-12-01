@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Video;
+
+public class Menu_Jogar : MonoBehaviour
+{
+    [SerializeField] Canvas canvas;
+    [SerializeField] Canvas next_canvas;
+    
+    [SerializeField] VideoPlayer start_player;
+    [SerializeField] VideoPlayer end_player;
+
+
+    public void play_and_next()
+    {
+        StartCoroutine("PlaySequence");
+    }
+
+    void Start()
+    {
+        end_player.Prepare();
+    }
+
+    IEnumerator PlaySequence()
+    {
+        start_player.playbackSpeed *= 10;
+        while(start_player.isPlaying)
+        {
+            yield return null;
+        }
+
+        while(!end_player.isPrepared)
+        {
+            yield return null;
+        }
+
+        end_player.Play();
+        
+        while(end_player.isPlaying)
+        {
+            yield return null;
+        }
+
+        canvas.enabled = false;
+        next_canvas.enabled = true;
+
+    }
+}

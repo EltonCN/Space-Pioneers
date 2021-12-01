@@ -14,5 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fases/FASE_8_UNICA.unity
     guid: 754e427ac4ac00a4bb98e6a0e6b67008
+    path: Assets/Scenes/Dev_scenes/SampleScene.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Fases/FASE_1.5_UNICA.unity
+    guid: fcf8d278c8d79f54297d50a3d2b2c130
+  - enabled: 1
+    path: Assets/Scenes/Fases/FASE_2_UNICA.unity
+    guid: 1b9b7926f3427674bbf196100f31b788
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 644210787423c264287f6302d97662da
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e3e0c1273b752cf4e82490e756ca4cb7, type: 2}
