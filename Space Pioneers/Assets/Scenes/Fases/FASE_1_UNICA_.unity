@@ -686,6 +686,10 @@ PrefabInstance:
       propertyPath: levelEnd
       value: 
       objectReference: {fileID: 2071661772}
+    - target: {fileID: 126801793071915291, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 570299313432358548, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_Name
       value: Default
@@ -793,6 +797,14 @@ PrefabInstance:
     - target: {fileID: 570299314568437708, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766107328563746260, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3996049792841403183, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: currentLanguage
+      value: English
       objectReference: {fileID: 0}
     - target: {fileID: 7880664827164150168, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_AnchorMax.y
