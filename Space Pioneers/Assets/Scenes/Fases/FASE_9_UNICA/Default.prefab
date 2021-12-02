@@ -943,7 +943,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   actionButtons:
-  - {fileID: 570299313268654352}
   - {fileID: 570299313457999284}
   - {fileID: 570299312605362704}
   planningButtons:
@@ -1788,10 +1787,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6806920450028359341, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806920450028359341, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6806920450028359339, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
 --- !u!4 &5931066213309740798 stripped
 Transform:
@@ -2046,7 +2050,7 @@ PrefabInstance:
     - target: {fileID: 7327858294849487806, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
 --- !u!4 &6094171933284928665 stripped
@@ -2065,14 +2069,6 @@ PrefabInstance:
       propertyPath: buttonUI
       value: 
       objectReference: {fileID: 570299312605362704}
-    - target: {fileID: 5571721380028912115, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2366166c915ebd048a7ce8619d730b59, type: 2}
-    - target: {fileID: 5571721381303279088, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6820887121347401889, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: buttonUI
       value: 
@@ -2082,16 +2078,8 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.10000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.10000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.781246
+      value: -13.29
       objectReference: {fileID: 0}
     - target: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2128,10 +2116,6 @@ PrefabInstance:
     - target: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7437448698058891623, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-      propertyPath: levelEnd
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7437448698058891647, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
       propertyPath: m_Name
