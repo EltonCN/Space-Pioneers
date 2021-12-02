@@ -9,6 +9,7 @@ public class MultipleText : MonoBehaviour
 {
     [Tooltip("Must be Lean Localization translation names")][SerializeField] List<string> translations =  new List<string>();
     [SerializeField]  UnityEvent raiseOnEnd;
+    [SerializeField] List<UnityEvent> raiseWithText;
 
     int actualText;
     LeanLocalizedTextMeshProUGUI textBox;
@@ -35,5 +36,10 @@ public class MultipleText : MonoBehaviour
         }
         
         textBox.TranslationName = translations[actualText];
+
+        if(actualText < raiseWithText.Count)
+        {
+            raiseWithText[actualText].Invoke();
+        }
     }
 }

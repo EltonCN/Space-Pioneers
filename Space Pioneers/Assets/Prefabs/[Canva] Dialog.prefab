@@ -302,9 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud.
+  m_text: "Movimente o planeta para ajudar a nave a chegar na sa\xEDda."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 99940d511a6d73a42b9c64df56cd5092, type: 2}
   m_sharedMaterial: {fileID: -6911703233311285235, guid: 99940d511a6d73a42b9c64df56cd5092, type: 2}
@@ -331,10 +329,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 50.75
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
