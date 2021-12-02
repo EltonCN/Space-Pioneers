@@ -9,7 +9,7 @@ public class SpaceShip : MonoBehaviour
 
     public GameObject explosion;
     private ParticleSystem boom;
-    bool exploded; // vari�vel de controle para garantir que a nave s� vai explodir uma vez
+    bool exploded; // variavel de controle para garantir que a nave so vai explodir uma vez
 
     public GameObject spaceShipModel;
     private MeshRenderer spaceShipMesh;
@@ -18,6 +18,9 @@ public class SpaceShip : MonoBehaviour
     public GameObject smallFlame2;
     private ParticleSystem flames1;
     private ParticleSystem flames2;
+
+    public AudioSource winningSound;
+    public AudioSource boomSound;
 
     public GameObject levelEnd;
 
@@ -40,8 +43,10 @@ public class SpaceShip : MonoBehaviour
     {
         // Se colidir com o objetivo/final da fase, não explode
         if (other.gameObject == levelEnd)
+        {
+            winningSound.Play();
             return;
-
+        }
         if(boom == null)
         {
             return;
@@ -51,6 +56,7 @@ public class SpaceShip : MonoBehaviour
         { 
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             boom.Play();
+            boomSound.Play();
             exploded = true;
             flames1.Stop();
             flames2.Stop();
