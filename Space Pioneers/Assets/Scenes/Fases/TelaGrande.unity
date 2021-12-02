@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 57017656}
   - component: {fileID: 57017659}
-  - component: {fileID: 57017658}
   - component: {fileID: 57017657}
   m_Layer: 0
   m_Name: MiniMapCamera
@@ -188,14 +187,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &57017658
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57017655}
-  m_Enabled: 1
 --- !u!20 &57017659
 Camera:
   m_ObjectHideFlags: 0
@@ -923,7 +914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4541692122144974180, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4541692122754857110, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
@@ -947,35 +938,35 @@ PrefabInstance:
       objectReference: {fileID: 1837785456}
     - target: {fileID: 4541692123090771269, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123090771269, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123090771269, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 366.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123090771269, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123501110851, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123501110851, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123501110851, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 72.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123501110851, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123714292448, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -983,19 +974,19 @@ PrefabInstance:
       objectReference: {fileID: 817924103}
     - target: {fileID: 4541692123714292449, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123714292449, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123714292449, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 219.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4541692123714292449, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6174705775560542086, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2155,6 +2146,6 @@ PrefabInstance:
     - target: {fileID: 7327858294849487806, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97317adafabe3094187c6a27ba8ac488, type: 3}
