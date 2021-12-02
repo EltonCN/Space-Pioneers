@@ -291,6 +291,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.5167532
       objectReference: {fileID: 0}
+    - target: {fileID: 1116185526, guid: f928bb4fdc66d694599fcfcff66cb3a2, type: 3}
+      propertyPath: levelEnd
+      value: 
+      objectReference: {fileID: 1618853508}
     - target: {fileID: 570299312605362705, guid: f928bb4fdc66d694599fcfcff66cb3a2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1763,6 +1767,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -35.38, z: 0}
+--- !u!1 &1618853508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+  m_PrefabInstance: {fileID: 2082142221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1653631475
 PrefabInstance:
   m_ObjectHideFlags: 0
