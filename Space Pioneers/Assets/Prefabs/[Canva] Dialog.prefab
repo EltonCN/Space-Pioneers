@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 951341250829938828}
   - component: {fileID: 951341250829938829}
   - component: {fileID: 951341250829938834}
+  - component: {fileID: 5540676660462239026}
   m_Layer: 5
   m_Name: '[Canva] Dialog'
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &951341250829938829
 MonoBehaviour:
@@ -175,6 +176,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5540676660462239026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951341250829938835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bde8e0129733340b24ebf24c086483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raiseOnEnable: {fileID: 11400000, guid: 8c3bdb6ec92c99c4a8fe2bfe13e1d733, type: 2}
+  raiseOnDisable: {fileID: 11400000, guid: 437d3df6af2df664aa4f5423736c2289, type: 2}
+  raiseEnableOnStart: 1
 --- !u!1 &951341251040291802
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,10 +201,11 @@ GameObject:
   m_Component:
   - component: {fileID: 951341251040291797}
   - component: {fileID: 951341251040291799}
+  - component: {fileID: 4380723057285186225}
   - component: {fileID: 951341251040291798}
   - component: {fileID: 951341251040291796}
   m_Layer: 5
-  m_Name: '[Text]'
+  m_Name: "[Text] Texto do di\xE1logo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,6 +238,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951341251040291802}
   m_CullTransparentMesh: 1
+--- !u!114 &4380723057285186225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951341251040291802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e13361b3848464f8198c4f4180ec03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translations: []
+  raiseOnEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 951341250829938835}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &951341251040291798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  translationName: Texto
+  translationName: Texto2
   FallbackText: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud.
@@ -526,10 +571,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951341250829938835}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 4380723057285186225}
+        m_TargetAssemblyTypeName: MultipleText, Assembly-CSharp
+        m_MethodName: nextText
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
