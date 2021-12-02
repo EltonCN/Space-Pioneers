@@ -8,6 +8,11 @@ public class ChangeVolume : MonoBehaviour
     {
         get
         {
+            if(!PlayerPrefs.HasKey("main_volume"))
+            {
+                PlayerPrefs.SetFloat("main_volume", 1f);
+            }
+            
             return PlayerPrefs.GetFloat("main_volume");
         }
         set
@@ -21,6 +26,11 @@ public class ChangeVolume : MonoBehaviour
     {
         get
         {
+            if(!PlayerPrefs.HasKey("music_volume"))
+            {
+                PlayerPrefs.SetFloat("music_volume", 1f);
+            }
+
             return PlayerPrefs.GetFloat("music_volume");
         }
         set
