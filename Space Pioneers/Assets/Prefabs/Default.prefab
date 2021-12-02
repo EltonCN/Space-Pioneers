@@ -626,6 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 570299313432358551}
+  - component: {fileID: 6799971873740510924}
   m_Layer: 0
   m_Name: Default
   m_TagString: Untagged
@@ -659,6 +660,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6799971873740510924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570299313432358548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38261a7cb3b9da4da6f16c0adf68db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theMixer: {fileID: 24100000, guid: 84201e8d370bae34da2e4800dc5a2cd7, type: 2}
 --- !u!1 &570299313457999274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3081,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6799971873740510924}
+        m_TargetAssemblyTypeName: MixerControl, Assembly-CSharp
+        m_MethodName: UpdateVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9098115461001761277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,6 +3262,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ChangeVolume, Assembly-CSharp
         m_MethodName: set_MusicVolume
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6799971873740510924}
+        m_TargetAssemblyTypeName: MixerControl, Assembly-CSharp
+        m_MethodName: UpdateVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4254,11 +4292,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
---- !u!4 &1116185525 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-  m_PrefabInstance: {fileID: 7437448699090453201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4152187589359082096 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6820887121347401889, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
@@ -4281,3 +4314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29cb8d54e11c44b9a31231830d2f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1116185525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
+  m_PrefabInstance: {fileID: 7437448699090453201}
+  m_PrefabAsset: {fileID: 0}

@@ -26,11 +26,11 @@ public class MixerControl : MonoBehaviour
 
     public void setMainVol() 
     {
-        theMixer.SetFloat("SfxVol", -80*(1-PlayerPrefs.GetFloat("main_volume")));
+        theMixer.SetFloat("SfxVol", -40*(1-PlayerPrefs.GetFloat("main_volume")));
     }
     
     public void setMusicVol()
     {
-        theMixer.SetFloat("MusicVol", -80*(1-PlayerPrefs.GetFloat("music_volume")));
+        theMixer.SetFloat("MusicVol", -40*(1-PlayerPrefs.GetFloat("music_volume")));
     }
 }
