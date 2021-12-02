@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Space Pioneers/Assets/Font/Nunito.meta
 guid: 81362378ac3467148beda4c9baeacb06
+=======
+guid: dc43bca7876ed2345b138ada89813929
+>>>>>>> develop:Space Pioneers/Assets/Font/OpenSans.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
