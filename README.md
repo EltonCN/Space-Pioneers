@@ -28,3 +28,11 @@ Neste jogo, o jogador deve manipular o cenário de cada fase do jogo, colocando 
 Code: Copyright (c) 2021 Space Pioneers Team
 
 For all non-code and non-licensed components: Space Pioneers © 2021 by Space Pioneers Team is licensed under CC BY-NC 4.0
+
+## Other attributions
+- Terrain Tools textures: OpenStreetMap ©OpenStreetMap contributors
+- Scripts/Event/Basic scripts: Copyright (c) 2018 Ryan Hipple
+- Scripts/Set/Basic scripts: Copyright (c) 2018 Ryan Hipple
+- OpenSans font: Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)
+- Nunito font: Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
+- Music: Music composed by AIVA - Artificial Intelligence virtual artist (https://aiva.ai).
