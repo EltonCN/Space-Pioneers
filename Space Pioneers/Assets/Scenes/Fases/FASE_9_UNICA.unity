@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023036086295055441, guid: e604091032374f74cbf8bd317e988453, type: 3}
       propertyPath: planningButtons.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4023036086295055441, guid: e604091032374f74cbf8bd317e988453, type: 3}
       propertyPath: actionButtons.Array.data[0]
