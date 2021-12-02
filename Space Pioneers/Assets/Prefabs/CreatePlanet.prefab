@@ -186,7 +186,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
-  prefab: {fileID: 0}
+  prefab: {fileID: 2152400458543118747, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
   useMousePosition: 0
   hasCost: 1
   creationCost: {fileID: 11400000, guid: 9ffd24f6a1c848944a7d7d9233bbbdd3, type: 2}

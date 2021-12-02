@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1116185526, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: levelEnd
+      value: 
+      objectReference: {fileID: 2082142222}
     - target: {fileID: 570299312605362705, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -740,6 +744,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+--- !u!1 &2082142222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+  m_PrefabInstance: {fileID: 2082142221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5312302227783612693
 PrefabInstance:
   m_ObjectHideFlags: 0

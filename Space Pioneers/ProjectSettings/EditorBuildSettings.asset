@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fases/FASE_9_UNICA.unity
     guid: e936c7ae66e429647bd220e12db182cf
   - enabled: 1
+    path: Assets/Scenes/Fases/FASE_10_GRANDE.unity
+    guid: eff62fecc3e97954cb922d273d3bca85
+  - enabled: 1
     path: Assets/Scenes/Fases/FASE_11_GRANDE.unity
     guid: 76fb1de6d0ea6184885bf6c020e35888
   - enabled: 1
