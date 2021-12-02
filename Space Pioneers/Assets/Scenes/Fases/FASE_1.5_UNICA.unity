@@ -132,15 +132,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10.6285715
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10.6285715
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10.6285715
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: collisionRadious
@@ -208,7 +208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: range
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: antiGravity
@@ -225,15 +225,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13.285714
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13.285714
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 311191397, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13.285714
+      value: 6.642857
       objectReference: {fileID: 0}
     - target: {fileID: 774147704, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: collisionRadious
@@ -301,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: range
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8283630942306210951, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: antiGravity

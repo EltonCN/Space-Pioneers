@@ -19,25 +19,15 @@ public class Zoom : MonoBehaviour
 
         zoom = map.FindAction("Zoom", true);
         zoom.performed += ctx => OnZoom(ctx);
-        //zoom.performed += x => scrollY = x.ReadValue<float>();
     }
-
-    /*void FixedUpdate()
-    {
-        if (scrollY < 0) {
-            ZoomScreen(-5);
-        } else if (scrollY > 0) {
-            ZoomScreen(5);
-        }
-    }*/
     
     public void OnZoom(InputAction.CallbackContext ctx)
     {
         scrollY = ctx.ReadValue<float>();
         if (scrollY < 0) {
-            ZoomScreen(-10);    
+            ZoomScreen(20);    
         } else if (scrollY > 0) {
-            ZoomScreen(10);
+            ZoomScreen(-20);
         }
     }
 
