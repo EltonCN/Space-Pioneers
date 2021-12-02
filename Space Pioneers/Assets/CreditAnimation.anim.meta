@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Space Pioneers/Assets/Lean/Common/Examples/Materials/Skybox.mat.meta
+guid: a6ac47071aa6ac74ca1755327d9983e6
+timeCreated: 1474763489
+licenseType: Store
+=======
 guid: b364f5211fb08d440b3f09bd64c22d86
+>>>>>>> develop:Space Pioneers/Assets/CreditAnimation.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
