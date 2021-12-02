@@ -33,6 +33,7 @@ For all non-code and non-licensed components: Space Pioneers © 2021 by Space Pi
 - Terrain Tools textures: OpenStreetMap ©OpenStreetMap contributors
 - Scripts/Event/Basic scripts: Copyright (c) 2018 Ryan Hipple
 - Scripts/Set/Basic scripts: Copyright (c) 2018 Ryan Hipple
+- 3rd/procedural-planet-customnodes scripts: Copyright (C) 2011 by Ashima Arts (Simplex noise). Copyright (C) 2011-2016 by Stefan Gustavson (Classic noise and others).
 - OpenSans font: Copyright 2020 The Open Sans Project Authors (https://github.com/googlefonts/opensans)
 - Nunito font: Copyright 2014 The Nunito Project Authors (https://github.com/googlefonts/nunito)
 - Music: Music composed by AIVA - Artificial Intelligence virtual artist (https://aiva.ai).
