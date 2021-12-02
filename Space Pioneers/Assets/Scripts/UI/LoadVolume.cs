@@ -8,6 +8,9 @@ public class LoadVolume : MonoBehaviour
     [SerializeField] Slider musicSlider;
     [SerializeField] Slider mainSlider;
 
+    AudioSource musicAudio;
+    AudioSource mainAudio;
+
     void OnEnable()
     {
         updateBoth();
@@ -15,7 +18,28 @@ public class LoadVolume : MonoBehaviour
 
     void Start()
     {
+        musicAudio = musicSlider.GetComponent<AudioSource>();
+        mainAudio = mainSlider.GetComponent<AudioSource>();
+
+        if(musicAudio != null)
+        {
+            musicAudio.enabled = false;
+        }
+        if(mainAudio != null)
+        {
+            mainAudio.enabled = false;
+        }
+
         updateBoth();
+
+        if(musicAudio != null)
+        {
+            musicAudio.enabled = true;
+        }
+        if(mainAudio != null)
+        {
+            mainAudio.enabled = true;
+        }
     }
 
     void updateBoth()
