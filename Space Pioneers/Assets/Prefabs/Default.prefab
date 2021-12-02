@@ -1191,7 +1191,7 @@ MonoBehaviour:
   playPauseButton: {fileID: 7880664828013502673}
   playButtonSprite: {fileID: 519803772750173402, guid: 4e029b12c4169e44eb3c55cd1b8160f2, type: 3}
   pauseButtonSprite: {fileID: -3345050207883599867, guid: 4e029b12c4169e44eb3c55cd1b8160f2, type: 3}
-  actionBar: {fileID: 0}
+  actionBar: {fileID: 570299313576088999}
 --- !u!114 &4023036086295055441
 MonoBehaviour:
   m_ObjectHideFlags: 0
