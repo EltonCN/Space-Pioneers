@@ -293,4 +293,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 44.983334
+    functionName: LoadGame
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 4ba9fa9f4784f8b408f0be5113132e32, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

@@ -12,7 +12,8 @@ public class CreditManager : MonoBehaviour
     }
     void EndReached(UnityEngine.Video.VideoPlayer vp)
     {
-        vp.playbackSpeed = vp.playbackSpeed / 10.0F;
+        //vp.playbackSpeed = vp.playbackSpeed / 10.0F;
         rollingCredits.SetActive(true);
     }
+
 }
