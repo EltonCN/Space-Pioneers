@@ -9,6 +9,7 @@ public class AbilityHolder : MonoBehaviour
     public GameObject parentGameObject;
     public Ability ability;
     public Button buttonUI;
+    public AudioSource sfx;
     float cooldownTime;
     float activeTime;
     enum AbilityState {
@@ -76,6 +77,9 @@ public class AbilityHolder : MonoBehaviour
             ability.Activate(parentGameObject);
             state = AbilityState.active;
             activeTime = ability.activeTime;
+
+            // sound effect 
+            sfx.Play();
         }
     }
 

@@ -13,6 +13,7 @@ public class Dash : MonoBehaviour
     ParticleSystem flames2;
     private PlayerInput playerInput;
     InputAction dash;
+    public AudioSource dashSound;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Dash : MonoBehaviour
 
     private void Dashing(InputAction.CallbackContext context) 
     {
+        dashSound.Play();
         flames1.Play();
         flames2.Play();
         rig.AddForce(transform.forward * dashSpeed, ForceMode.Impulse);
