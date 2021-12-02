@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4037868846777658421
 Transform:
   m_ObjectHideFlags: 0
@@ -112,6 +112,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d23fe047-020c-44ec-b282-c25f02bdfb0f
     m_ActionName: Camera/Pan[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e8d586f-aff5-4c94-90b3-fd255acedece
+    m_ActionName: Camera/Click[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 14fbf0cd-1889-4a55-8dbb-7e720fbbe7f4
+    m_ActionName: Camera/Drag[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b229ed6b-4006-4c10-9eca-1179264e69a7
+    m_ActionName: Camera/MousePosition[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Camera
@@ -136,7 +148,7 @@ MonoBehaviour:
   actionMechanics: []
   planningMechanics:
   - {fileID: 4037868847406256315}
-  - {fileID: 4037868846777658426}
+  - {fileID: 594094217171278526}
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
 --- !u!1 &4037868847406256309
 GameObject:
@@ -225,4 +237,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a79eb66285b8b1448724dd3552f51f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 4
+  dragSpeed: 25

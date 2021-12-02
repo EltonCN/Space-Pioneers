@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class AbilityHolder : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class AbilityHolder : MonoBehaviour
     public GameModeState globalState;
     public GameObject parentGameObject;
     public Ability ability;
+    public Button buttonUI;
     float cooldownTime;
     float activeTime;
     enum AbilityState {
@@ -20,11 +22,19 @@ public class AbilityHolder : MonoBehaviour
     public PlayerInput playerInput;
     public string inputActionName;
     private InputAction abilityAction;
-
-    private void Start() {
+    InputActionMap map;
+    private void Awake() {
         InputActionMap map = playerInput.currentActionMap;
         abilityAction = map.FindAction(inputActionName, true);
+    }
+
+    private void Start() {
         abilityAction.performed += FireAbility;
+        if (globalState.actualGameMode == gameMode) {
+            buttonUI.interactable = true;
+        } else {
+            buttonUI.interactable = false;
+        }
     }
     
     void Update()
@@ -37,6 +47,7 @@ public class AbilityHolder : MonoBehaviour
                     ability.BeginCooldown(parentGameObject);
                     state = AbilityState.cooldown;
                     cooldownTime = ability.cooldownTime;
+                    buttonUI.interactable = false;
                 }
             break;
             case AbilityState.cooldown:
@@ -44,6 +55,7 @@ public class AbilityHolder : MonoBehaviour
                     cooldownTime -= Time.deltaTime;
                 } else {
                     state = AbilityState.ready;
+                    buttonUI.interactable = true;
                 }
             break;
             default:
@@ -66,4 +78,5 @@ public class AbilityHolder : MonoBehaviour
             activeTime = ability.activeTime;
         }
     }
+
 }

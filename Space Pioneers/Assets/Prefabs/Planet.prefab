@@ -133,7 +133,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: Atraction
         m_Overridden: 1
-      - m_Value: -1
+      - m_Value: 1
         m_Name: Attraction
         m_Overridden: 1
       - m_Value: 0.5
@@ -284,7 +284,7 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: cce5bfa0b381f20469e9ac53c0ed10f1, type: 2}
   range: 5
   showRange: 0
-  antiGravity: 1
+  antiGravity: 0
   rangeToFieldScale: 1.3285714
 --- !u!114 &774147704
 MonoBehaviour:

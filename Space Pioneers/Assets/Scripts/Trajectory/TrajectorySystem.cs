@@ -20,7 +20,7 @@ public class TrajectorySystem : ScriptableObject
     PhysicsScene simulationPhysicsScene;
     
     Dictionary<TrajectoryPreview, Vector3[]> trajectorysPositions;
-    List<GameObject> fakes;
+    List<GameObject> fakes = new List<GameObject>();
     public Vector3[] getPositions(TrajectoryPreview tp)
     {
         if((Time.time - lastComputeTime >= computeInterval) || 
@@ -159,7 +159,6 @@ public class TrajectorySystem : ScriptableObject
             }
 
 
-            simulationPhysicsScene.Simulate(Time.fixedDeltaTime);
             simulationPhysicsScene.Simulate(Time.fixedDeltaTime*deltaTFactor);
 
             foreach(GameObject go in fakeWithTrajectory)
@@ -197,8 +196,6 @@ public class TrajectorySystem : ScriptableObject
 
         simulationScene = SceneManager.CreateScene(scene_name, param);
         simulationPhysicsScene = simulationScene.GetPhysicsScene();
-        fakes  = new List<GameObject>();
-
     }
 
 }
