@@ -626,6 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 570299313432358551}
+  - component: {fileID: 6799971873740510924}
   m_Layer: 0
   m_Name: Default
   m_TagString: Untagged
@@ -659,6 +660,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6799971873740510924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570299313432358548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38261a7cb3b9da4da6f16c0adf68db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theMixer: {fileID: 24100000, guid: 84201e8d370bae34da2e4800dc5a2cd7, type: 2}
 --- !u!1 &570299313457999274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,6 +2989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9098115460941234054}
   - component: {fileID: 9098115460941234049}
+  - component: {fileID: 8267678900431474836}
   m_Layer: 5
   m_Name: '[Slider]'
   m_TagString: Untagged
@@ -3067,6 +3082,126 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6799971873740510924}
+        m_TargetAssemblyTypeName: MixerControl, Assembly-CSharp
+        m_MethodName: UpdateVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8267678900431474836}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!82 &8267678900431474836
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098115460941234055}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4461937202686455673, guid: 84201e8d370bae34da2e4800dc5a2cd7, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 358163c9bb43b1e428c44e0d16a23929, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &9098115461001761277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,6 +3379,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6799971873740510924}
+        m_TargetAssemblyTypeName: MixerControl, Assembly-CSharp
+        m_MethodName: UpdateVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9098115461329371974
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,6 +3553,7 @@ GameObject:
   - component: {fileID: 9098115461455488939}
   - component: {fileID: 9098115461455488936}
   - component: {fileID: 8633687224637945661}
+  - component: {fileID: 3089900390384669366}
   m_Layer: 5
   m_Name: '[Panel] Config'
   m_TagString: Untagged
@@ -3489,6 +3637,20 @@ MonoBehaviour:
   raiseOnEnable: {fileID: 11400000, guid: 8c3bdb6ec92c99c4a8fe2bfe13e1d733, type: 2}
   raiseOnDisable: {fileID: 11400000, guid: 437d3df6af2df664aa4f5423736c2289, type: 2}
   raiseEnableOnStart: 0
+--- !u!114 &3089900390384669366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9098115461455488942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8b3313349a97d4fbd272ac791b3920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 9098115461197720937}
+  mainSlider: {fileID: 9098115460941234049}
 --- !u!1 &9098115461503489796
 GameObject:
   m_ObjectHideFlags: 0
@@ -3547,7 +3709,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 100
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -4254,11 +4416,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
---- !u!4 &1116185525 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
-  m_PrefabInstance: {fileID: 7437448699090453201}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4152187589359082096 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6820887121347401889, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
@@ -4281,3 +4438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c29cb8d54e11c44b9a31231830d2f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1116185525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7437448698058891620, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
+  m_PrefabInstance: {fileID: 7437448699090453201}
+  m_PrefabAsset: {fileID: 0}
