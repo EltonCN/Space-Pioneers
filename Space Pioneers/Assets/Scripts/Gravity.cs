@@ -94,7 +94,7 @@ public class Gravity : MonoBehaviour
                     }
 
                     rb.AddForce(force);
-                    rb.transform.rotation = Quaternion.LookRotation(rb.velocity, transform.up);
+                    //rb.transform.rotation = Quaternion.LookRotation(rb.velocity, transform.up);
                 }
                 
             }
