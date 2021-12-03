@@ -1121,6 +1121,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2071661775, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1803085339265576712}
     - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1912,6 +1916,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
   maxActionCost: {fileID: 11400000, guid: b136ed0e172219c4fa82fb29f1c53578, type: 2}
   gameMode: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
@@ -2606,6 +2611,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   onGameModeChange: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
@@ -2931,6 +2937,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
 --- !u!222 &1400415352836400202
 CanvasRenderer:
@@ -3090,6 +3097,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
+--- !u!1 &1803085339265576712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7437448698058891647, guid: cf7f89b21f7507849bd0aaf19a4247d0, type: 3}
+  m_PrefabInstance: {fileID: 1803085339265576711}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1831789278815023811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3333,6 +3345,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionButtons:
   - {fileID: 8780018763335396550}
   - {fileID: 8780018762977493090}
@@ -3761,6 +3774,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
 --- !u!222 &7880664827350713134
 CanvasRenderer:
@@ -3953,6 +3967,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   onGameModeChange: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
@@ -4275,6 +4290,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionSet: {fileID: 11400000, guid: e4806b9bacba46748aec62045992d080, type: 2}
   maxActionCost: {fileID: 11400000, guid: b136ed0e172219c4fa82fb29f1c53578, type: 2}
   gameMode: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
@@ -5609,6 +5625,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delay: 0
 --- !u!114 &9093604100540175117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5649,6 +5666,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  delay: 0
 --- !u!1 &9093604100540175118
 GameObject:
   m_ObjectHideFlags: 0

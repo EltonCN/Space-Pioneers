@@ -21,7 +21,11 @@ public class MultipleText : MonoBehaviour
         if(translations.Count != 0)
         {
             textBox.TranslationName = translations[0];
-            raiseWithText[0].Invoke();
+            if(raiseWithText.Count > 0)
+            {
+                raiseWithText[0].Invoke();
+            }
+            
         }
     }
     
