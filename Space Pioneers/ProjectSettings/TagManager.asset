@@ -3,17 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - drag
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Heat distortion
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Post processing
+  - 3DGUI
+  - MiniMap
   - 
   - 
   - 
