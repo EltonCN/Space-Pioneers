@@ -61,6 +61,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 3999371031344394356}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &107118298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +102,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7880664828514065629}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3999371031344394356}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -2170,6 +2194,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2573615263593292783, guid: 97a7dc231ee27624ca384b17e306891e, type: 3}
   m_PrefabInstance: {fileID: 570299314212209674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3999371031344394356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3488744859106391166, guid: 97a7dc231ee27624ca384b17e306891e, type: 3}
+  m_PrefabInstance: {fileID: 570299314212209674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &570299314351389496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2400,7 +2429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7415141276146333115, guid: d550a57c2cbc30947926cefb3acfc2fc, type: 3}
       propertyPath: currentLanguage
-      value: Portuguese
+      value: English
       objectReference: {fileID: 0}
     - target: {fileID: 7415141276146333116, guid: d550a57c2cbc30947926cefb3acfc2fc, type: 3}
       propertyPath: m_Name

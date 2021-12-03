@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380723057285186225, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: raiseOnEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4380723057285186225, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: raiseOnEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4380723057285186225, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: raiseWithText.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4380723057285186225, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: raiseWithText.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode

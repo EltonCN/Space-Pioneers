@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1116185526, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: levelEnd
+      value: 
+      objectReference: {fileID: 2082142222}
     - target: {fileID: 570299312605362705, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -242,6 +246,10 @@ PrefabInstance:
       propertyPath: actionBar
       value: 
       objectReference: {fileID: 294125654}
+    - target: {fileID: 1831789278998050929, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4023036086295055441, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: actionButtons.Array.size
       value: 2
@@ -269,6 +277,10 @@ PrefabInstance:
     - target: {fileID: 6244427654050690483, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6993123609191425286, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7880664827164150168, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
       propertyPath: m_AnchorMax.y
@@ -340,6 +352,11 @@ MonoBehaviour:
 --- !u!4 &294125655 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3996049792841403182, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
+  m_PrefabInstance: {fileID: 294125651}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &294125656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1116185518, guid: 0f2e2a71b2ca6e147929d39ca953d970, type: 3}
   m_PrefabInstance: {fileID: 294125651}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &360759438
@@ -970,13 +987,18 @@ PrefabInstance:
     - target: {fileID: 1005717853658511766, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: targetObject
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 294125656}
     - target: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: m_Name
       value: LevelEnd
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+--- !u!1 &2082142222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1005717853658511773, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+  m_PrefabInstance: {fileID: 2082142221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5312302227783612693
 PrefabInstance:
   m_ObjectHideFlags: 0
