@@ -916,6 +916,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4541692122193312064, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
+      propertyPath: actionBar
+      value: 
+      objectReference: {fileID: 1367519790}
     - target: {fileID: 4541692122754857110, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1137,32 +1141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1154328741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1036443097849204331, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
-  m_PrefabInstance: {fileID: 1288869451689574351}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1154328742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6171476851452262784, guid: 579faa3308673cc49bc4ea9a9486083f, type: 3}
   m_PrefabInstance: {fileID: 1288869451689574351}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1154328743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154328741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdaf8361ebb8d8a4199626f19e9c6d60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1191546075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4541692123501110852, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
@@ -1313,6 +1296,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18a1e2f780ea6f489857b3e43efcba6, type: 3}
+--- !u!114 &1367519790 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4541692121985594099, guid: 51dd42ac7dea96644802606ddab66d55, type: 3}
+  m_PrefabInstance: {fileID: 1051062506}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1396739809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1504792061241214895, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
@@ -1364,25 +1358,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1864999959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608b9779dd4bcfa4a86d49954bf40901, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d45b29556b24604992b1439d3b916b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Event: {fileID: 11400000, guid: a8b28c6a405778d41bbcaf7f2d142854, type: 2}
   Response:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1864999960}
-        m_TargetAssemblyTypeName: CameraGameModeListener, Assembly-CSharp
-        m_MethodName: SwitchVirtualCamera
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   globalState: {fileID: 11400000, guid: 9a990b677b2c7e84abc1619c603c3317, type: 2}
   cinemachineBrain: {fileID: 1750084626}
 --- !u!4 &1916140766 stripped

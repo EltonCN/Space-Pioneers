@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     {
         if (playPauseButton.image.sprite == playButtonSprite) {
             playPauseButton.image.sprite = pauseButtonSprite;
-        } else if (playPauseButton.image.sprite == pauseButtonSprite && actionBar.fillAmount == 0){
+        } else if (playPauseButton.image.sprite == pauseButtonSprite && actionBar.fillAmount == 0) {
             playPauseButton.image.sprite = playButtonSprite;
         }
     }

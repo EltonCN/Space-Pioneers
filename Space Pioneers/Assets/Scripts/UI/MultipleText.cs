@@ -18,10 +18,10 @@ public class MultipleText : MonoBehaviour
     {
         actualText = 0;
         textBox = GetComponent<LeanLocalizedTextMeshProUGUI>();
-
         if(translations.Count != 0)
         {
             textBox.TranslationName = translations[0];
+            raiseWithText[0].Invoke();
         }
     }
     

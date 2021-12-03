@@ -6,7 +6,11 @@ public class Zoom : MonoBehaviour
 {
     [SerializeField]
     private float zoomSpeed = 20f;
-    private Camera _camera;
+    [SerializeField]
+    private float maxZoomOut = 160f;
+    [SerializeField]
+    private float maxZoomIn = 50f;
+    public Transform _camera;
     private PlayerInput playerInput;
     InputAction zoom;
     float scrollY;
@@ -14,7 +18,7 @@ public class Zoom : MonoBehaviour
     private void Awake() 
     {
         playerInput = GetComponentInParent<PlayerInput>();
-        _camera = Camera.main;
+        //_camera = Camera.main;
         InputActionMap map = playerInput.currentActionMap;
 
         zoom = map.FindAction("Zoom", true);
@@ -24,9 +28,9 @@ public class Zoom : MonoBehaviour
     public void OnZoom(InputAction.CallbackContext ctx)
     {
         scrollY = ctx.ReadValue<float>();
-        if (scrollY < 0) {
-            ZoomScreen(20);    
-        } else if (scrollY > 0) {
+        if (scrollY < 0 && _camera.position.y <= maxZoomOut) { // Zoom Out
+            ZoomScreen(20); 
+        } else if (scrollY > 0 && _camera.position.y >= maxZoomIn) { // Zoom In
             ZoomScreen(-20);
         }
     }
@@ -34,9 +38,9 @@ public class Zoom : MonoBehaviour
     private void ZoomScreen(float increment) 
     {
         Vector3 direction = new Vector3(0, increment, 0);
-        _camera.transform.position = Vector3.MoveTowards(_camera.transform.position, 
-                                                        _camera.transform.position + direction, 
-                                                        zoomSpeed * Time.deltaTime);
+        _camera.position = Vector3.MoveTowards(_camera.position, 
+                                                    _camera.position + direction, 
+                                                    zoomSpeed * Time.deltaTime);
     }
 
     public void ActivateInput()
