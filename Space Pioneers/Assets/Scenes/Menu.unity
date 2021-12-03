@@ -8708,7 +8708,7 @@ MonoBehaviour:
   noAvailableTextMaterial: {fileID: 2100000, guid: 806bca4c8f8531d4eb18183630aae2fd, type: 2}
   availableTextMaterial: {fileID: 2100000, guid: 1924f4482b7d4264897fbf63471c58c1, type: 2}
   saveManager: {fileID: 11400000, guid: 049d360d519503249bf604cfea6aa877, type: 2}
-  lastSceneLevelIndex: 8
+  lastSceneLevelIndex: 12
 --- !u!1 &2026359715
 GameObject:
   m_ObjectHideFlags: 0

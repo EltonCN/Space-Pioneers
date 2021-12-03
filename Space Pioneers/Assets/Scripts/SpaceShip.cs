@@ -19,7 +19,6 @@ public class SpaceShip : MonoBehaviour
     private ParticleSystem flames1;
     private ParticleSystem flames2;
 
-    public AudioSource winningSound;
     public AudioSource boomSound;
 
     public GameObject levelEnd;
@@ -44,7 +43,6 @@ public class SpaceShip : MonoBehaviour
         // Se colidir com o objetivo/final da fase, não explode
         if (other.gameObject == levelEnd)
         {
-            winningSound.Play();
             return;
         }
         if(boom == null)

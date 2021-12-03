@@ -20,6 +20,8 @@ public class GameEventListener : MonoBehaviour
     [Tooltip("Response to invoke when Event is raised.")]
     public UnityEvent Response;
 
+    [SerializeField] float delay = 0;
+
     private void OnEnable()
     {
         Event.RegisterListener(this);
@@ -32,6 +34,20 @@ public class GameEventListener : MonoBehaviour
 
     public void OnEventRaised()
     {
+        if(gameObject.activeInHierarchy)
+        {
+            StartCoroutine("RaiseResponse");
+        }
+        
+    }
+
+    IEnumerator RaiseResponse()
+    {
+        if(delay > 0)
+        {
+            yield return new WaitForSeconds(delay);
+        }
+        
         Response.Invoke();
     }
 }

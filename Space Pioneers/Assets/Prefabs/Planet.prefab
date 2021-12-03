@@ -319,6 +319,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls: []
+  delay: 0
   actionMechanics:
   - {fileID: 8283630942306210951}
   - {fileID: 37411370049452579}
@@ -368,6 +369,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  delay: 0
 --- !u!135 &3610341300463701902
 SphereCollider:
   m_ObjectHideFlags: 0

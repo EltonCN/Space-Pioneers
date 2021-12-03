@@ -10,6 +10,10 @@ public class SaveManager : ScriptableObject
     {
         get
         {
+            if(saves[currentSave] == null)
+            {
+                load();
+            }
             return saves[currentSave];
         }
     }
