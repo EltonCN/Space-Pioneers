@@ -1,6 +1,6 @@
 # Space-Pioneers
 
-https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://madukawakami.itch.io/space-pioneers)
+[![itchi.io](https://img.shields.io/badge/Itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://madukawakami.itch.io/space-pioneers)
 
 A space exploration game for Introduction to Electronic Game Development classes, ICMC 2021; made using Unity.
 
