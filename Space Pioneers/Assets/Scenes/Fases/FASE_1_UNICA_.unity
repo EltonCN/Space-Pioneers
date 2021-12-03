@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2119089124, guid: eb731a4e964b3264091ab8a8050c0b34, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 951341250829938831, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 951341250829938831, guid: 05826ba2467e0ae4a918b2e351e9c34e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1342,8 +1342,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Conta a hist\xF3ria de nosso povo \nUma longa excurs\xE3o pelos confins
-    do espa\xE7o \nTra\xE7ada pelos \"deuses\"\nE caminhada pelos bravos e entusiasmados"
+  m_text: 'Tell the story of our people
+
+    A long excursion to the ends of space
+
+    traced
+    by the "gods"
+
+    And walk through the brave and enthusiastic'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 821db9b9b93524442875733d38bd6fd4, type: 2}
   m_sharedMaterial: {fileID: 2449692266584306069, guid: 821db9b9b93524442875733d38bd6fd4, type: 2}
@@ -1370,7 +1376,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.4
+  m_fontSize: 55.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1806,7 +1812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1962958246
 Transform:
   m_ObjectHideFlags: 0
@@ -1919,6 +1925,18 @@ PrefabInstance:
     - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 38.815926
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 38.815926
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 38.815926
       objectReference: {fileID: 0}
     - target: {fileID: 1005717853658511761, guid: 4faf0247195a7834fa4a670bc4ea9d09, type: 3}
       propertyPath: m_LocalPosition.x
