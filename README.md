@@ -17,6 +17,9 @@ Neste jogo, o jogador deve manipular o cenário de cada fase do jogo, colocando 
 
 - [Ten Pager](Docs/Ten%20Pager.pdf)
 - [Pitch (Slides)](Docs/Apresentação%20Pitch.pdf)
+- [Post Mortem](Docs/Space%20Pioneers%20-%20Post%20Mortem.pdf)
+- [Post Mortem - Apresentação](Docs/Space%20Pioneers%20-%20Post%20Mortem%20-%20Apresentação.pdf)
+
 
 ## Our team
 
